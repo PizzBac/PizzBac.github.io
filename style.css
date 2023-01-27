@@ -10,7 +10,6 @@
 } */
 body {
     background: white;
-
     /* macbook-air: 2560x1600 */
     /* 1440 x 900 */
     /* width: 1440px; */
@@ -224,7 +223,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     transition: background-color 0.24s linear; 
 }
 
-.div_side_login {
+/* .div_side_login {
     width: 200px;
     height: 50px;
 
@@ -232,7 +231,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-}
+} */
 
 
 /* .side_language {
@@ -579,7 +578,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 
 .div_side_select {
     width: 300px;
-    height: 800px;
+    height: 1000px;
     /* background-color: yellow; */
     margin-left: 100px;
     /* top:0px; */
@@ -708,6 +707,163 @@ td {
     font-weight: 600;
     cursor: pointer;
 }
+
+
+
 /* ################################################################ */
-/*  */
+/* 적응형 웹 페이지 */
 /* ################################################################ */
+@media (min-width: 320px) and (max-width: 800px) {
+    
+    /* ################### */
+    /* index 페이지 */
+    /* ################### */
+    body {
+        background: white;
+        height: 1000px;
+        
+    }
+    
+    header {
+        width: 100%;
+        /* height: 50px; */
+        background-color: white;
+        overflow: hidden;
+    }
+    
+    div[class="sidebar"] {
+        width: 100vw;
+        height: 100%;
+        background: rgb(214, 230, 245);
+        opacity: 0.9;
+        position: fixed;
+        top: 0;
+        left: -100vw;
+        z-index: 1;
+        transition: all .35s;
+    
+        /* filter: drop-shadow(10px 5px 5px #494848); */
+    }
+    
+    input[id="menuicon"]:checked + label + div {
+        left: 0;
+    }
+    
+    input[id="menuicon"] {
+        display: none;
+    }
+    
+    input[id="menuicon"]:checked + label {
+        z-index: 2;
+        left: 100vw;
+        background: url('https://cdn-icons-png.flaticon.com/512/2099/2099192.png') no-repeat 0 1px / contain;
+    
+    }
+    
+    .main {
+        height: 1000px;
+        background-color: white;
+        /* display: block; */
+        /* position: relative; */
+        /* align-items: center; */
+        position: relative;
+        margin-top: 0px;
+        text-align: center;
+    }
+    
+    .div_calendar {
+        display: inline-block;
+        position: absolute;
+        top: 50px;
+
+    }
+    .day_info {
+        width: 80px;
+        height: 20px;
+        display: block;
+        margin-left: 240px;
+        margin-top: 10px;
+        border: none;
+        background-color: transparent;
+    
+        
+    }
+    
+    #period_2 {
+        margin-left: 260px;
+    }
+    .day_info:focus {
+        outline: none;
+    }
+    
+    .div_inputTxtPic {
+        width: 350px;
+        height: 510px;
+    
+        background-image:url("https://i.pinimg.com/originals/ac/5c/19/ac5c19af73a982c2a88ec76fea3593ef.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        
+        position: absolute;
+        margin-left: 50px;
+        /* display: inline-block; */
+
+        top: 600px;
+
+        /* margin-top: 2000px; */
+    }
+    
+    
+    .user_input_textarea {
+        width: 325px;
+        height: 395px;
+        
+        border: none;
+        background-color: transparent;
+    
+        padding-left: 0px;
+        margin-top: 10px;
+    
+        font-size: 20px;
+        line-height: 30px;
+    }
+    
+    .user_input_textarea:focus {
+        outline: none;
+    }
+    
+    #main_btn {
+        /* size */
+        width: 100px;
+        height: 35px;
+        
+        /* style */
+        background: rgba(254,229,0,1);
+        opacity: 1;
+        border: none;
+        /* top: 0px; */
+        /* left: 0px; */
+    
+        /* radius */
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        
+        /* position */
+        display: inline-block;
+    
+        /* overflow: hidden; */
+    }
+
+
+    /* ################### */
+    /* Result 페이지 */
+    /* ################### */
+    
+    .side_day_div_text {
+        width: 100vw;
+    }
+
+}

@@ -12,6 +12,10 @@
     <title>index</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <!-- 네이버 로그인 -->
+    <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+
     <script type="text/javascript" src="index.js"></script>
 </head>
 <body>
@@ -35,6 +39,19 @@
                 <hr class="side_hr_horizon">
                 <div class="side_comp">
                     <div class="div_side_login">
+                        <ul>
+                            <li>
+                              <!-- 아래와같이 아이디를 꼭 써준다. -->
+                              <a id="naverIdLogin_loginButton" href="javascript:void(0)">
+                                  <span>네이버 로그인</span>
+                              </a>
+                            </li>
+                            <li onclick="naverLogout(); return false;">
+                              <a href="javascript:void(0)">
+                                  <span>네이버 로그아웃</span>
+                              </a>
+                            </li>
+                        </ul>
                         <!-- <img src="" alt=""> -->
                         <!-- <div class="google_login">소셜 로그인 div</div> -->
                     </div>
@@ -55,10 +72,14 @@
         </header>
     </div>
     <hr class="hr_horizon">
+
+    <!-- 메인 페이지 -->
     <form action="">
         <article class="main">
-            <!-- <div class="div_MainCal"></div> -->
-            <div>
+
+
+            <!-- 달력 카드 -->
+            <div class="div_calendar">
                 <table class="Calendar">
                     <thead>
                         <tr>
@@ -84,6 +105,8 @@
                     </tbody>
                 </table>
             </div>
+            
+            <!-- 일기 입력 카드 -->
             <div name="div_inputTxtPic" class="div_inputTxtPic">
                 <div class="div_day_info">
                     <input type="text" id="period_1" class="day_info" placeholder="오늘의 날짜">
@@ -91,8 +114,10 @@
                     <input type="text" id="period_3" class="day_info" placeholder="매우 상쾌함">
                 </div>
                 <textarea name="user_input" class="user_input_textarea" placeholder="오늘의 하루를 기록해보세요."></textarea>
+                <!-- 버튼 두개 -->
                 <button type="reset" name="reset" value="Clear" id="main_btn" class="btn_reset" onClick="location.reload();">Clear</button>
-                <button type="submit" name="submit" value="Submit" id="main_btn" class="btn_submit" onclick="window.open('loadingjs.html')" onclick="spanchange();">Submit</button>
+                <button type="submit" name="submit" value="Submit" id="main_btn" class="btn_submit" onClick=>Submit</button>
+                <!-- 서브밋 버튼은  -->
             </div>
         </article> 
     </form>

@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
+    <title>Mychelangelo</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="UserResult.js"></script>
@@ -26,9 +26,11 @@
                     </ul>
                 </nav>
             </label>
+
+            <!-- 사이드바 -->
             <div class="sidebar">
                 <div class="div_side_title">
-                    <a class="fabicon" href="index.html"></a>
+                    <a class="fabicon" href="UserResult.html"></a>
                     <p class="side_title">My Chelangelo</p>
                 </div>
                 <hr class="side_hr_horizon">
@@ -78,23 +80,24 @@
         </header>
     
     </div>
+
+    <!-- 메인 카드 -->
     <form action="">
         <article class="result_main">
             <div class="div_Main">
+
+                <!-- 버튼과 날짜 -->
                 <ul type="none" class="main_comp">
-                    <li><button type="reset" name="reset" value="Clear" id="main_btn2" class="btn_back" onclick="window.open('index.html')"><span> << back </span></button></li>
+                    <li><button type="reset" name="reset" value="Clear" id="main_btn2" class="btn_back" onclick="location.href='index.html'"><span> << back </span></button></li>
                     <li><span class="main_today" id="main_today"> 0000년 00월 00일 </span></li>
-                    <li><button type="submit" name="submit" value="Submit" id="main_btn2" class="btn_download" onclick="window.open('loadingjs.html')"><span>Download</span></button></li>
+                    <li><button type="submit" name="submit" value="Submit" id="main_btn2" class="btn_download"><span>Download</span></button></li>
                 </ul>
+
+                <!-- 메인사진 -->
                 <div class="div_main_pic">
                     <img src="img/res.png" alt="dog" class="user_main_pic" id="main_photo"> 
-                    <!-- onclick="window.open(this.src)" -->
-                    <!-- <div class="modal">
-                        <span class="close">close</span>
-                        <img class="modal_content">
-                    </div> -->
-
-                    <!-- 팝업 될 곳 -->
+                    
+                    <!-- 팝업 될 곳 (모달)-->
                     <div class="modal">
                         <button>&times;</button>
                         <div class="modalBox">
@@ -118,25 +121,10 @@
                     <li><img src="img/crong5.png" alt="dog" id="user_img_side"></li>
                     <li><img src="img/crong6.png" alt="dog" id="user_img_side"></li>
                 </ul>
-
-
                 <div><button type="button" name="down" value="down" id="btn_result" class="btn_down"></button></div>
             </div>
         </article> 
     </form>
-    <script>
 
-        var photo = document.getElementById("main_photo");
-        var thumbnail = document.querySelectorAll("#gallery > li > img");
-        
-        for ( var i = 0; i < thumbnail.length; i++ )
-          thumbnail[i].addEventListener("click", function () {
-        
-            photo.setAttribute("src", this.getAttribute("src"));
-            // photo.src = this.src;
-        
-          });
-
-    </script>
 </body>
 </html>

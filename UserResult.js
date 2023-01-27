@@ -56,3 +56,14 @@ thumbnail[i].addEventListener("click", function () {
   // photo.src = this.src;
 
 });
+
+var photo = document.getElementById("main_photo");
+var thumbnail = document.querySelectorAll("#gallery > li > img");
+
+for ( var i = 0; i < thumbnail.length; i++ )
+  thumbnail[i].addEventListener("click", function () {
+
+    photo.setAttribute("src", this.getAttribute("src"));
+    // photo.src = this.src;
+
+});
