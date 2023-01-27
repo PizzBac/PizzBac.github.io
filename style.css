@@ -1,0 +1,713 @@
+/* .bd_header {
+    width: 100%;
+    height: 832px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    display: inline-block;
+    top: 0px;
+    left: 10px;
+    overflow: hidden;
+} */
+body {
+    background: white;
+
+    /* macbook-air: 2560x1600 */
+    /* 1440 x 900 */
+    /* width: 1440px; */
+    height: 1600px;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+/* 눈을 편안하게 하는 색깔
+1. 하늘색계열: R: 214/ G: 230/ B:  245
+2. 연한녹색계열: R: 181/ G: 214/ B: 146
+3. 진한녹색계열: R: 163/ G: 204/  B: 163
+*/
+/* .Top_container {
+    width:1440px;
+	margin:0 auto;
+} */
+
+header {
+    width: 100%;
+    height: 50px;
+    /* position: absolute; */
+
+    /* flex: left; */
+    /* background-color: pink; */
+
+    /* justify-content: center; */
+    /* position: absolute; */
+    /* position: relative; */
+    /* text-align: left; */
+    /* display: inline-block; */
+    /* display: flex; */
+	/* align-items: center; */
+	/* justify-content: space-between; */
+}
+
+.header_comp {
+    height: 50px;
+    position: relative;
+    /* align-items: left; */
+    /* display: inline-block; */
+    display: flex;
+	align-items: center;
+	justify-content: left;
+}
+
+div[class="sidebar"] {
+    width: 400px;
+    height: 100%;
+    background: rgb(214, 230, 245);
+    opacity: 0.9;
+    position: fixed;
+    top: 0;
+    left: -400px;
+    z-index: 1;
+    transition: all .35s;
+
+    /* filter: drop-shadow(10px 5px 5px #494848); */
+}
+
+input[id="menuicon"]:checked + label + div {
+    left: 0;
+}
+
+input[id="menuicon"] {
+    display: none;
+}
+input[id="menuicon"] + label {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    /* top: 30; */
+    /* left: 30; */
+    margin-top: 20px;
+    margin-left: 30px;
+    transition: all .35s;
+    cursor: pointer;
+
+    background: url('https://cdn-icons-png.flaticon.com/512/2099/2099192.png') no-repeat 0 0px / contain;
+
+}
+
+input[id="menuicon"]:checked + label {
+    z-index: 2;
+    left: 400px;
+    background: url('https://cdn-icons-png.flaticon.com/512/2099/2099192.png') no-repeat 0 1px / contain;
+
+}
+
+.title01 {
+    font-size: 70px;
+    /* position: absolute; */
+    margin-left: 100px;
+    letter-spacing: 0.5rem;
+    font-weight: bold;
+    font-family: 'Dancing Script', cursive;
+    
+}
+
+.title02 {
+    font-size: 50px;
+    margin-left: 10px;
+    /* position: absolute; */
+    letter-spacing: 0.25rem;
+    font-family: 'Dancing Script', cursive;
+}
+
+.title_desp {
+    margin-left: 40px;
+    /* position: absolute; */
+}
+
+.hr_horizon {
+    width: 100%;
+    margin-top: 50px;
+    /* position: fixed; */
+}
+
+/* ################################################################ */
+                        /* side bar */
+/* ################################################################ */
+.div_side_title {
+    display: flex;
+	align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.fabicon {
+    width: 70px;
+    height: 70px;
+    background: url('https://cdn-icons-png.flaticon.com/512/2970/2970217.png') no-repeat 0 1px / contain;
+    /* margin-top: 10px; */
+    /* margin-left: 150px; */
+
+}
+
+
+.side_title {
+    font-size: 30px;
+    margin-left: 10px;
+    /* position: absolute; */
+    letter-spacing: 0.25rem;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+
+    padding-left: 20px;
+}
+
+.side_hr_horizon {
+    /* width: 100%; */
+    height: 5px;
+}
+
+.side_comp {
+    display: flex;
+	align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.side_language {
+    display: flex;
+	align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+input[type="radio"] { 
+    display: none;
+} 
+
+input[type="radio"] + label {
+    font-weight: 400;
+    font-size: 14px;
+    padding-right: 50px;
+} 
+
+input[type="radio"] + label span {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: -2px 10px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 3px solid #ffffff; 
+    background-color: #fff; 
+}
+
+input[type="radio"]:checked + label {
+    color: #333;
+    font-weight: 800;
+}
+
+input[type="radio"]:checked + label span {
+    background-color: rgba(254,229,0,1);
+    border: 5px solid #ffffff;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.1); 
+} 
+
+input[type="radio"] + label span, input[type="radio"]:checked + label span { 
+    -webkit-transition: background-color 0.24s linear; 
+    -o-transition: background-color 0.24s linear; 
+    -moz-transition: background-color 0.24s linear; 
+    transition: background-color 0.24s linear; 
+}
+
+.div_side_login {
+    width: 200px;
+    height: 50px;
+
+    background-image: url("img/login.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/* .side_language {
+    font-size: 20px; 
+    margin-left: 10px;
+    position: absolute;
+    letter-spacing: 0.25rem;
+    font-family: 'Dancing Script', cursive;
+}  */
+
+.div_side_pic {
+    /* display: inline-block; */
+    /* display: flex; */
+	align-items: center;
+	justify-content: left;
+    margin-left: 94px;
+    overflow-y: scroll;
+    height:800px;
+}
+
+.div_side_pic::-webkit-scrollbar {
+    display: none;
+}
+
+#user_img {
+    width: 206px;
+    height: 206px;
+    /* margin-left: 44px; */
+    padding-top: 50px;
+    
+
+}
+
+
+/* ################################################################ */
+                        /* Main View */
+/* ################################################################ */
+.main {
+    /* width: 1275px; */
+    /* height: 800px; */
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.div_MainCal {
+    /* background-color: pink; */
+    
+    /* size */
+    width: 500px;
+    height: 600px;
+    
+    /* bgImg */
+    background-image: url("https://harooplan.com/wp-content/uploads/2022/12/1%EC%9B%94%EB%8B%AC%EB%A0%A5-6-3-3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+    display: inline-block;
+}
+
+/* .pic_MainDay {
+    width: auto;
+    height: 300px;
+    
+    display: inline-block;
+} */
+.div_day_info {
+    /* display: block; */
+}
+
+.day_info {
+    width: 80px;
+    height: 20px;
+    display: block;
+    margin-left: 240px;
+    margin-top: 10px;
+    float: left;
+    border: none;
+    background-color: transparent;
+
+    
+}
+
+#period_2 {
+    margin-left: 260px;
+}
+.day_info:focus {
+    outline: none;
+}
+
+.div_inputTxtPic {
+    width: 350px;
+    height: 510px;
+
+    background-image:url("https://i.pinimg.com/originals/ac/5c/19/ac5c19af73a982c2a88ec76fea3593ef.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-left: 30px;
+    /* padding-top: 50px; */
+}
+
+
+.user_input_textarea {
+    width: 325px;
+    height: 395px;
+    
+    border: none;
+    background-color: transparent;
+
+    padding-left: 0px;
+    margin-top: 10px;
+
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.user_input_textarea:focus {
+    outline: none;
+}
+
+#main_btn {
+    /* size */
+    width: 100px;
+    height: 35px;
+    
+    /* style */
+    background: rgba(254,229,0,1);
+    opacity: 1;
+    border: none;
+    /* top: 0px; */
+    /* left: 0px; */
+
+    /* radius */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+    margin-left: 50px;
+    margin-top: 10px;
+    /* position */
+    display: inline-block;
+
+    overflow: hidden;
+}
+
+
+/* ######################################################################################################## */
+/* __UserResult__.html */
+/* ######################################################################################################## */
+.div_side_day {
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.side_day_title {
+    display: block;
+    font-size: 40px;
+    letter-spacing: 0.5rem;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.side_day_div_text {
+    width: 400px;
+    height: 500px;
+    
+    margin-top: 50px;
+    overflow-y: scroll;
+
+}
+
+.side_day_div_text::-webkit-scrollbar {
+    display: none;
+}
+
+.side_day_text {
+    display: block;
+    text-align: justify;
+    font-size: 20px;
+    font-family: sans-serif;
+
+    padding-left: 30px;
+    padding-right: 30px;
+    line-height: 40px;
+
+}
+
+#keywords {
+    width: 50px;
+
+    font-size: 30px;
+    letter-spacing: 0.5rem;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+
+    position: relative;
+    display: inline-block;
+    /* float: left; */
+    
+    margin-top: 20px;
+    margin-left: 60px;
+}
+
+
+.result_main {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    margin-top: 100px;
+}
+
+.div_Main {
+    width: 800px;
+    height: 800px;
+}
+.main_comp {
+    height: 50px;
+    position: relative;
+    /* align-items: left; */
+    /* display: inline-block; */
+    display: flex;
+	align-items: center;
+	justify-content: left;
+    margin-bottom: 50px;
+}
+
+#main_btn2 {
+    /* size */
+    width: 100px;
+    height: 35px;
+    
+    /* font */
+    font-size: 17px;
+
+    /* style */
+    background: rgb(214,230,245);
+    opacity: 1;
+    border: none;
+
+    /* radius */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+    /* margin */
+    margin-top: 10px;
+    
+    /* position */
+    display: inline-block;
+
+    overflow: hidden;
+}
+
+.main_today {
+    margin-left: 150px;
+    font-size: 20px;
+
+    /* position: absolute; */
+    letter-spacing: 0.5rem;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+}
+
+.btn_download {
+    margin-left: 150px;
+    
+}
+
+.div_main_pic {
+    align-items: center;
+}
+
+.user_main_pic {
+    width: 768px;
+    height: 768px;
+    margin-left: 0px;
+    box-shadow: 30px 30px 30px #494848;
+    border-radius: 20px;
+
+}
+
+/* 모달 */
+/* 
+.imgList {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+} */
+
+
+.modal {
+	display: none;
+	z-index: 500;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal button {
+	position: absolute;
+	top: 3rem;
+	right: 3rem;
+	background: transparent;
+	border: 0;
+	color: #ffffff;
+	font-size: 3rem;
+}
+
+.modalBox {
+	position: relative;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -20%);
+	background-color: #ffffff;
+	width: 30%;
+	height: 30%;
+	text-align: center;
+}
+
+.modalBox img {
+	width: 100%;
+}
+
+#main_photo:hover {
+    opacity: 0.5;
+}
+/*  */
+
+
+
+.div_side_select {
+    width: 300px;
+    height: 800px;
+    /* background-color: yellow; */
+    margin-left: 100px;
+    /* top:0px; */
+    /* margin-top: 0px; */
+    overflow-y: scroll;
+}
+
+.div_side_select::-webkit-scrollbar {
+    display: none;
+}
+
+#user_img_side {
+    width: 256px;
+    height: 256px;
+    /* margin-left: 22px; */
+    padding: 20px;
+    filter: drop-shadow(10px 5px 5px #494848);
+    /* border-radius: 20px; */
+}
+
+#user_img_side:hover {
+    opacity: 0.5;
+}
+
+#btn_result {
+    width: 100px;
+    height: 30px;
+
+    border: none;
+    background-color: transparent;
+    margin-left: 130px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+}
+
+.btn_up {
+    background: url('https://cdn-icons-png.flaticon.com/512/130/130906.png') no-repeat 0 1px / contain;
+}
+.btn_down {
+    background: url('https://cdn-icons-png.flaticon.com/512/2722/2722987.png') no-repeat 0 1px / contain;
+}
+
+
+/* ################################################################ */
+/* calendar */
+/* ################################################################ */
+
+/* div {
+    background-color : white;
+    height: auto;
+    width: 400px;
+    margin: 0px;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius:5px;
+    box-shadow:0px 40px 30px -20px rgba(0,0,0,0.3);
+} */
+.div_mainCal {
+    /* size */
+    width: 500px;
+    /* height: auto; */
+    
+    padding: 20px;
+    border-radius:5px;
+    box-shadow:0px 30px 10px -10px rgba(214,230,245,8);
+    
+}
+
+td {
+    width: 70px;
+    height: 80px;
+}
+
+.Calendar {
+    text-align: center;
+}
+
+.Calendar>thead>tr:first-child>td {
+    font-family: 'Questrial', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.Calendar>thead>tr:last-child>td {
+    font-family: 'Questrial', sans-serif;
+    font-weight: 600;     
+}
+
+.Calendar>tbody>tr>td>p {
+    font-family: 'Montserrat', sans-serif;
+    height: 45px;
+    width: 45px;
+    border-radius: 45px;
+    transition-duration: .2s;
+    line-height: 45px;
+    margin: 2.5px;
+    display: block;
+    text-align: center;
+}        
+
+.pastDay {
+    color: lightgray;
+}
+
+.today {
+    background-color: #F5D042;            
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.futureDay {
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+.futureDay:hover{
+    background:#eee;
+}
+
+.futureDay.choiceDay,
+.today.choiceDay {
+    background: #0A174E;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+/* ################################################################ */
+/*  */
+/* ################################################################ */

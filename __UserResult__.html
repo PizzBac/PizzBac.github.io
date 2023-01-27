@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import "./reset.css";
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="UserResult.js"></script>
+</head>
+<body>
+    <div class="Top_container">
+        <header class="header">
+            <input type="checkbox" id="menuicon">
+            <label for="menuicon">
+                <nav>
+                    <ul type="none" class="header_comp">
+                        <li><h1 class="title01">My</h1></li>
+                        <li><h2 class="title02">Chelangelo</h2></li>
+                        <!-- <li><p class="title_desp">record your own perfect day</p></li> -->
+                    </ul>
+                </nav>
+            </label>
+            <div class="sidebar">
+                <div class="div_side_title">
+                    <a class="fabicon" href="__index__.html"></a>
+                    <p class="side_title">My Chelangelo</p>
+                </div>
+                <hr class="side_hr_horizon">
+                <div class="div_side_day">
+                    <span class="side_day_title">today diary</span>
+                    <div class="side_day_div_text">
+                        <span class="side_day_text">일부러 몇 발자국 물러나
+                            내가 없이 혼자 걷는 널 바라본다
+                            옆자리 허전한 너의 풍경
+                            흑백 거리 가운데 넌 뒤돌아본다
+                            그때 알게 되었어
+                            난 널 떠날 수 없단 걸
+                            우리 사이에 그 어떤 힘든 일도
+                            이별보단 버틸 수 있는 것들이었죠
+                            어떻게 이별까지 사랑하겠어
+                            널 사랑하는 거지
+                            사랑이라는 이유로 서로를 포기하고
+                            찢어질 것 같이 아파할 수 없어 난
+                            두세 번 더 길을 돌아갈까
+                            적막 짙은 도로 위에 걸음을 포갠다
+                            아무 말 없는 대화 나누며
+                            주마등이 길을 비춘 먼 곳을 본다
+                            그때 알게 되었어
+                            난 더 갈 수 없단 걸
+                            한 발 한 발 이별에 가까워질수록
+                            너와 맞잡은 손이 사라지는 것 같죠
+                            어떻게 이별까지 사랑하겠어
+                            널 사랑하는 거지
+                            사랑이라는 이유로 서로를 포기하고
+                            찢어질 것같이 아파할 수 없어 난 no oh oh
+                            어떻게 내가 어떻게 너를
+                            이후에 우리 바다처럼 깊은 사랑이
+                            다 마를 때까지 기다리는 게 이별일 텐데</span>    
+                    </div>
+                    <span class="side_day_title">Keywords</span>
+                    <ul>
+                        <li id="keywords"><span>사랑</span></li>
+                        <li id="keywords"><span>이별</span></li>
+                        <li id="keywords"><span>대화</span></li>
+                        <li id="keywords"><span>걸음</span></li>
+                        <li id="keywords"><span>포기</span></li>
+                        <li id="keywords"><span>허전</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </header>
+    
+    </div>
+    <form action="">
+        <article class="result_main">
+            <div class="div_Main">
+                <ul type="none" class="main_comp">
+                    <li><button type="reset" name="reset" value="Clear" id="main_btn2" class="btn_back" onclick="window.open('__index__.html')"><span> << back </span></button></li>
+                    <li><span class="main_today" id="main_today"> 0000년 00월 00일 </span></li>
+                    <li><button type="submit" name="submit" value="Submit" id="main_btn2" class="btn_download" onclick="window.open('loadingjs.html')"><span>Download</span></button></li>
+                </ul>
+                <div class="div_main_pic">
+                    <img src="img/res.png" alt="dog" class="user_main_pic" id="main_photo"> 
+                    <!-- onclick="window.open(this.src)" -->
+                    <!-- <div class="modal">
+                        <span class="close">close</span>
+                        <img class="modal_content">
+                    </div> -->
+
+                    <!-- 팝업 될 곳 -->
+                    <div class="modal">
+                        <button>&times;</button>
+                        <div class="modalBox">
+                            <img src="" alt="">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- 오른쪽 갤러리 부분 -->
+            <div class="div_side_select">
+                <div><button type="button" name="up" value="up" id="btn_result" class="btn_up"></button></div>
+                <ul id="gallery">
+                    <li><img src="img/res.png" alt="dog" id="user_img_side"></li>
+                    <li><img src="img/crong1.png" alt="dog" id="user_img_side"></li>
+                    <li><img src="img/crong2.png" alt="dog" id="user_img_side"></li>
+                    <li><img src="img/crong3.png" alt="dog" id="user_img_side"></li>
+                    <li><img src="img/crong4.png" alt="dog" id="user_img_side"></li>
+                    <li><img src="img/crong5.png" alt="dog" id="user_img_side"></li>
+                    <li><img src="img/crong6.png" alt="dog" id="user_img_side"></li>
+                </ul>
+
+
+                <div><button type="button" name="down" value="down" id="btn_result" class="btn_down"></button></div>
+            </div>
+        </article> 
+    </form>
+    <script>
+
+        var photo = document.getElementById("main_photo");
+        var thumbnail = document.querySelectorAll("#gallery > li > img");
+        
+        for ( var i = 0; i < thumbnail.length; i++ )
+          thumbnail[i].addEventListener("click", function () {
+        
+            photo.setAttribute("src", this.getAttribute("src"));
+            // photo.src = this.src;
+        
+          });
+
+    </script>
+</body>
+</html>

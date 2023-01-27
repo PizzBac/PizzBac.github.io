@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import "./reset.css";
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <div class="Top_container">
+        <header class="header">
+            <input type="checkbox" id="menuicon">
+            <label for="menuicon">
+                <nav>
+                    <ul type="none" class="header_comp">
+                        <li><h1 class="title01">My</h1></li>
+                        <li><h2 class="title02">Chelangelo</h2></li>
+                        <!-- <li><p class="title_desp">record your own perfect day</p></li> -->
+                    </ul>
+                </nav>
+            </label>
+            <div class="sidebar">
+                <div class="div_side_title">
+                    <a class="fabicon" href="__index__.html"></a>
+                    <p class="side_title">My Chelangelo</p>
+                </div>
+                <hr class="side_hr_horizon">
+                <div class="side_comp">
+                    <div class="div_side_login">
+                        <!-- <img src="" alt=""> -->
+                        <!-- <div class="google_login">소셜 로그인 div</div> -->
+                    </div>
+                </div>
+                <div class="side_language">
+                    <div> <input id="option-one" name="radio" value="kor" checked="checked" type="radio"> <label for="option-one"> <span></span> 한국어(Kor) </label> </div> 
+                    <div> <input id="option-two" name="radio" value="eng" type="radio"> <label for="option-two"> <span></span> 영어(Eng) </label> </div>
+                </div>
+                <div class="div_side_pic">
+                    <img src="img/res.png" alt="dog" id="user_img">
+                    <img src="img/res.png" alt="dog" id="user_img">
+                    <img src="img/res.png" alt="dog" id="user_img">
+                    <img src="img/res.png" alt="dog" id="user_img">
+                    <img src="img/res.png" alt="dog" id="user_img">
+                    <img src="img/res.png" alt="dog" id="user_img">
+                </div>
+            </div>
+        </header>
+    </div>
+    <hr class="hr_horizon">
+    <form action="">
+        <article class="main">
+            <!-- <div class="div_MainCal"></div> -->
+            <div>
+                <table class="Calendar">
+                    <thead>
+                        <tr>
+                            <td onClick="prevCalendar();" style="cursor:pointer;">&#60;</td>
+                            <td colspan="5">
+                                <span id="calYear"></span>년
+                                <span id="calMonth"></span>월
+                            </td>
+                            <td onClick="nextCalendar();" style="cursor:pointer;">&#62;</td>
+                        </tr>
+                        <tr>
+                            <td>일</td>
+                            <td>월</td>
+                            <td>화</td>
+                            <td>수</td>
+                            <td>목</td>
+                            <td>금</td>
+                            <td>토</td>
+                        </tr>
+                    </thead>
+        
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div name="div_inputTxtPic" class="div_inputTxtPic">
+                <div class="div_day_info">
+                    <input type="text" id="period_1" class="day_info" placeholder="오늘의 날짜">
+                    <input type="text" id="period_2" class="day_info" placeholder="햇살이 맑음">
+                    <input type="text" id="period_3" class="day_info" placeholder="매우 상쾌함">
+                </div>
+                <textarea name="user_input" class="user_input_textarea" placeholder="오늘의 하루를 기록해보세요."></textarea>
+                <button type="reset" name="reset" value="Clear" id="main_btn" class="btn_reset" onClick="location.reload();">Clear</button>
+                <button type="submit" name="submit" value="Submit" id="main_btn" class="btn_submit" onclick="window.open('loadingjs.html')" onclick="spanchange();">Submit</button>
+            </div>
+        </article> 
+    </form>
+</body>
+</html>
