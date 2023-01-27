@@ -1,15 +1,15 @@
 
+window.onload = function() {
+  let nowMonth = new Date();  // 현재 달을 페이지를 로드한 날의 달로 초기화
+  let today = new Date();     // 페이지를 로드한 날짜를 저장
+  let date = nowMonth.getFullYear() + "년" + (nowMonth.getMonth() + 1) + "월" + today.getDate() + "일";
+  document.getElementById("main_today").innerHTML = date;
+}
+
 $('.sidebar').on('click', function () {
   // $('#sidebar').removeClass('active');
   $('.sidebar').fadeOut();
 });
-
-window.onload = function () { 
-  let nowMonth = new Date();  // 현재 달을 페이지를 로드한 날의 달로 초기화
-  let today = new Date();     // 페이지를 로드한 날짜를 저장
-  let date = nowMonth.getFullYear() + "년" + leftPad(nowMonth.getMonth() + 1) + "월" + today.getDate() + "일";
-  document.getElementById("main_today").innerHTML = date;
-}
 
 // 이미지 클릭시 모달 창
 $(function(){

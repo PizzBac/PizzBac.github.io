@@ -404,7 +404,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 
 .side_day_div_text {
     width: 400px;
-    height: 500px;
+    height: 300px;
     
     margin-top: 50px;
     overflow-y: scroll;

@@ -15,8 +15,6 @@
     
     <!-- 네이버 로그인 -->
     <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
-
-    <script type="text/javascript" src="index.js"></script>
 </head>
 <body>
     <div class="Top_container">
@@ -74,7 +72,7 @@
     <hr class="hr_horizon">
 
     <!-- 메인 페이지 -->
-    <form action="">
+    <form action="loadingjs.html">
         <article class="main">
 
 
@@ -115,11 +113,12 @@
                 </div>
                 <textarea name="user_input" class="user_input_textarea" placeholder="오늘의 하루를 기록해보세요."></textarea>
                 <!-- 버튼 두개 -->
-                <button type="reset" name="reset" value="Clear" id="main_btn" class="btn_reset" onClick="location.reload();">Clear</button>
-                <button type="submit" name="submit" value="Submit" id="main_btn" class="btn_submit" onClick=>Submit</button>
-                <!-- 서브밋 버튼은  -->
+                <button type="reset" name="reset" value="Clear" id="main_btn" class="btn_reset" onClick="location.reload()">Clear</button>
+                <button type="submit" name="submit" value="Submit" id="main_btn" class="btn_submit">Submit</button>
+                <!-- 서브밋 버튼은 href가 안됨. -->
             </div>
         </article> 
     </form>
+    <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
