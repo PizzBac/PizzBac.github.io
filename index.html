@@ -17,6 +17,9 @@
 
     <!-- 네이버 로그인 -->
     <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+    <!-- 네이버 로그인정보끌어오기  -->
+    <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js" charset="UTF-8"></script>
 </head>
 
 <body>
@@ -43,7 +46,7 @@
                 </div>
                 <hr class="side_hr_horizon">
                 <div class="side_comp">
-                    <div class="div_side_login">
+                    <div class="div_side_login" id="login_view">
                         <ul>
                             <li>
                                 <!-- 아래와같이 아이디를 꼭 써준다. -->
@@ -69,6 +72,16 @@
                         </ul>
                         <!-- <img src="" alt=""> -->
                         <!-- <div class="google_login">소셜 로그인 div</div> -->
+                    </div>
+                    <div class="div_side_profile" id="profile_view">
+                        <div class="div_profile_img">
+                            <img class="img_profile" src="img/crong1.png"></img>
+                        </div>
+                        <div class="div_profile">
+                            <span class="nickname_title">nickname : <span class="nickname"></span></span>
+                            <span class="email_title">email : <span class="email"></span></span>
+                            <span class="name_title">name : <span class="name"></span></span>
+                        </div>
                     </div>
                 </div>
                 <div class="side_language">

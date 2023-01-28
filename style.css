@@ -227,7 +227,24 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     float: left;
     width: auto;
 }
-
+#login_view{display: none;}
+.img_profile{
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.div_side_profile{
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.div_profile span{
+    display: block;
+    text-align: left;
+    margin-left: 10px;
+}
 /* .div_side_login {
     width: 200px;
     height: 50px;
