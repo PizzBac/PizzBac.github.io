@@ -6,6 +6,7 @@
         @import "./reset.css";
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
         @import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+        
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,17 +48,22 @@
                             <li>
                                 <!-- 아래와같이 아이디를 꼭 써준다. -->
                                 <a id="naverIdLogin_loginButton" href="javascript:void(0)">
-                                    <button class="btn_logtin_naver">안녕</button>
-                                </a>
-                            </li>
-                            <li onclick="naverLogout(); return false;">
-                                <a href="javascript:void(0)">
-                                    <span>네이버 로그아웃</span>
+                                    <button class="btn_login_naver"></button>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
-                                    <button>안녕2</button>
+                                <a id="googleIdLogin_loginButton" href="javascript:void(0)">
+                                    <button class="btn_login_google"></button>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="appleIdLogin_loginButton" href="javascript:void(0)">
+                                    <button class="btn_login_apple" onclick="clickApple()"></button>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="kakaoIdLogin_loginButton" href="javascript:void(0)">
+                                    <button class="btn_login_kakao"></button>
                                 </a>
                             </li>
                         </ul>

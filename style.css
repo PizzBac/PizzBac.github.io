@@ -222,6 +222,11 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     -moz-transition: background-color 0.24s linear; 
     transition: background-color 0.24s linear; 
 }
+.div_side_login{
+    display:inline-block;
+    float: left;
+    width: auto;
+}
 
 /* .div_side_login {
     width: 200px;
@@ -264,11 +269,41 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     
 
 }
-
+.div_side_login ul li{
+    float: left;
+    padding-right: 5px;
+}
 .div_side_login ul li a button {
-    width: 50px;
-    height: 50px;
-    background-image: url(img/login.png);
+    display:inline-block;
+    height: 40px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+}
+.btn_login_naver{
+    text-align: center;
+    width: 40px;
+    background-image: url(img/naverLogin.png);
+}
+.btn_login_google{
+    text-align: center;
+    width: 160px;
+    background-image: url(img/googleLogin.png);
+}
+.btn_login_apple{
+    text-align: center;
+    width: 40px;
+    background-image: url(http://m.darkvictory.co.kr/_d1/img/icon_dv_apple_logo.png);
+
+}
+.btn_login_kakao{
+    text-align: center;
+    width: 90px;
+    background-image: url(img/kakaoLogin.png);
+}
+.div_side_login ul li a button:hover{
+    cursor: pointer;
 }
 /* ################################################################ */
                         /* Main View */

@@ -37,6 +37,13 @@ if (status) {
 });
 });
 
+function logout(){
+    alert("로그아웃 되었습니다.")
+    history.go(-1);
+}
+function clickApple(){
+    alert("개발중입니다.")
+}
 
 var testPopUp;
 function openPopUp() {
@@ -185,3 +192,4 @@ for ( var i = 0; i < thumbnail.length; i++ )
     // photo.src = this.src;
 
 });
+
