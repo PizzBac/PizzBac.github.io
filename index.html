@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <style>
         @import "./reset.css";
@@ -12,10 +13,11 @@
     <title>index</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    
+
     <!-- 네이버 로그인 -->
     <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
 </head>
+
 <body>
     <div class="Top_container">
         <header class="header">
@@ -23,8 +25,12 @@
             <label for="menuicon">
                 <nav>
                     <ul type="none" class="header_comp">
-                        <li><h1 class="title01">My</h1></li>
-                        <li><h2 class="title02">Chelangelo</h2></li>
+                        <li>
+                            <h1 class="title01">My</h1>
+                        </li>
+                        <li>
+                            <h2 class="title02">Chelangelo</h2>
+                        </li>
                         <!-- <li><p class="title_desp">record your own perfect day</p></li> -->
                     </ul>
                 </nav>
@@ -39,15 +45,15 @@
                     <div class="div_side_login">
                         <ul>
                             <li>
-                              <!-- 아래와같이 아이디를 꼭 써준다. -->
-                              <a id="naverIdLogin_loginButton" href="javascript:void(0)">
-                                  <span>네이버 로그인</span>
-                              </a>
+                                <!-- 아래와같이 아이디를 꼭 써준다. -->
+                                <a id="naverIdLogin_loginButton" href="javascript:void(0)">
+                                    <span>네이버 로그인</span>
+                                </a>
                             </li>
                             <li onclick="naverLogout(); return false;">
-                              <a href="javascript:void(0)">
-                                  <span>네이버 로그아웃</span>
-                              </a>
+                                <a href="javascript:void(0)">
+                                    <span>네이버 로그아웃</span>
+                                </a>
                             </li>
                         </ul>
                         <!-- <img src="" alt=""> -->
@@ -55,8 +61,10 @@
                     </div>
                 </div>
                 <div class="side_language">
-                    <div> <input id="option-one" name="radio" value="kor" checked="checked" type="radio"> <label for="option-one"> <span></span> 한국어(Kor) </label> </div> 
-                    <div> <input id="option-two" name="radio" value="eng" type="radio"> <label for="option-two"> <span></span> 영어(Eng) </label> </div>
+                    <div> <input id="option-one" name="radio" value="kor" checked="checked" type="radio"> <label
+                            for="option-one"> <span></span> 한국어(Kor) </label> </div>
+                    <div> <input id="option-two" name="radio" value="eng" type="radio"> <label for="option-two">
+                            <span></span> 영어(Eng) </label> </div>
                 </div>
                 <div class="div_side_pic">
                     <img src="img/res.png" alt="dog" id="user_img">
@@ -98,12 +106,12 @@
                             <td>토</td>
                         </tr>
                     </thead>
-        
+
                     <tbody>
                     </tbody>
                 </table>
             </div>
-            
+
             <!-- 일기 입력 카드 -->
             <div name="div_inputTxtPic" class="div_inputTxtPic">
                 <div class="div_day_info">
@@ -113,12 +121,14 @@
                 </div>
                 <textarea name="user_input" class="user_input_textarea" placeholder="오늘의 하루를 기록해보세요."></textarea>
                 <!-- 버튼 두개 -->
-                <button type="reset" name="reset" value="Clear" id="main_btn" class="btn_reset" onClick="location.reload()">Clear</button>
+                <button type="reset" name="reset" value="Clear" id="main_btn" class="btn_reset"
+                    onClick="location.reload()">Clear</button>
                 <button type="submit" name="submit" value="Submit" id="main_btn" class="btn_submit">Submit</button>
                 <!-- 서브밋 버튼은 href가 안됨. -->
             </div>
-        </article> 
+        </article>
     </form>
     <script type="text/javascript" src="index.js"></script>
 </body>
+
 </html>
