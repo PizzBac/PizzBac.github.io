@@ -130,7 +130,7 @@ input[id="menuicon"]:checked + label {
 }
 
 /* ################################################################ */
-                        /* side bar */
+                        /* Main side bar */
 /* ################################################################ */
 .div_side_title {
     display: flex;
@@ -265,7 +265,11 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 
 }
 
-
+.div_side_login ul li a button {
+    width: 50px;
+    height: 50px;
+    background-image: url(img/login.png);
+}
 /* ################################################################ */
                         /* Main View */
 /* ################################################################ */
