@@ -11,7 +11,7 @@ var naverLogin = new naver.LoginWithNaverId(
     {
         clientId: "bXtVxf20aEiH_6zM5yjf", //내 애플리케이션 정보에 cliendId를 입력해줍니다.
         // callbackUrl: "https://pizzbac.github.io/", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
-        callbackUrl: "http://127.0.0.1:3000/",
+        callbackUrl: "http://pizzbac.github.io/",
         isPopup: false,
         callbackHandle: true
     }
