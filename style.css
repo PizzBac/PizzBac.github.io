@@ -225,18 +225,21 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 .div_side_login{
     display:inline-block;
     float: left;
-    width: auto;
+    width: 200px;
 }
 #login_view{display: none;}
 .img_profile{
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    border-radius: 50px;
 }
+
 .div_side_profile{
     display: flex;
+    /* width: 200px; */
 	align-items: center;
 	justify-content: center;
 }
@@ -920,6 +923,106 @@ td {
     
     .side_day_div_text {
         width: 100vw;
+    }
+
+    .result_main {
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .div_Main {
+        width: 100vw;
+        height: 100vh;
+    }
+    .main_comp {
+        width: 100px;
+        /* position: relative; */
+        float: left;
+        position: relative;
+        height: 50px;
+        /* position: relative; */
+        /* align-items: left; */
+        /* display: inline-block; */
+        /* display: flex; */
+        /* align-items: center; */
+        /* justify-content: left; */
+        margin-bottom: 100px;
+    }
+    
+    #main_btn2 {
+        /* size */
+        width: 200px;
+        height: 35px;
+        
+        /* font */
+        font-size: 17px;
+    
+        /* style */
+        background: rgb(214,230,245);
+        opacity: 1;
+        border: none;
+    
+        /* radius */
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        
+        /* margin */
+        /* margin-top: 10px; */
+        
+        /* position */
+        /* display: inline-block; */
+    
+        /* overflow: hidden; */
+    }
+    
+    .main_today {
+        margin-left: 50px;
+        font-size: 20px;
+    
+        /* position: absolute; */
+        letter-spacing: 0.5rem;
+        font-family: 'Dancing Script', cursive;
+        text-align: center;
+    }
+
+    .btn_back {
+        margin-left: 50px;
+    }
+    .btn_download {
+        margin-left: 10px;
+        /* margin-left: 150px; */
+        
+    }
+    
+    .div_main_pic {
+        /* width: 300px; */
+        /* height: 300px; */
+        align-items: center;
+    }
+    
+    .user_main_pic {
+        width: 100px;
+        height: 100px;
+        /* margin-left: 0px; */
+        box-shadow: 30px 30px 30px #494848;
+        border-radius: 20px;
+        float: left;
+    
+    }
+
+    .div_side_select {
+        width: 100px;
+        height: 100px;
+        /* background-color: yellow; */
+        margin-left: 50px;
+        /* top:0px; */
+        /* margin-top: 0px; */
+        overflow-x: scroll;
     }
 
 }
