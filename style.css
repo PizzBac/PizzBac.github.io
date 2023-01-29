@@ -228,25 +228,50 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     width: 200px;
 }
 #login_view{display: none;}
+
 .img_profile{
     width: 100px;
     height: 100px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    border-radius: 50px;
+    border-radius: 30px;
+
+    margin-right: 20px;
 }
 
 .div_side_profile{
     display: flex;
-    /* width: 200px; */
+    width: auto;
+    height: 200px;
 	align-items: center;
 	justify-content: center;
+
+    line-height: 30px;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
 }
+
 .div_profile span{
     display: block;
     text-align: left;
-    margin-left: 10px;
+    margin-left: 20px;
+}
+
+.name {
+    font-size: 40px;
+    color: rgb(112,66,20);
+    letter-spacing: 0.5rem;
+    margin-bottom: 10px;
+}
+
+.nickname {
+    color: gray;
+}
+
+.email {
+    color: gray;
 }
 /* .div_side_login {
     width: 200px;
@@ -450,6 +475,12 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     /* display: flex; */
     /* justify-content: center; */
     /* align-items: center; */
+    width: auto;
+    height: 800px;
+    overflow-y: scroll;
+}
+.div_side_day::-webkit-scrollbar {
+    display: none;
 }
 
 .side_day_title {
@@ -485,21 +516,29 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     line-height: 40px;
 
 }
+.side_div_keywords {
+    margin-bottom: 200px;
+}
+
 
 #keywords {
-    width: 50px;
+    width: 80px;
 
     font-size: 30px;
     letter-spacing: 0.5rem;
     font-family: 'Dancing Script', cursive;
     text-align: center;
+    align-items: center;
 
     position: relative;
     display: inline-block;
     /* float: left; */
     
     margin-top: 20px;
-    margin-left: 60px;
+    margin-left: 40px;
+
+    border: 2px solid rgb(112,66,20);
+    border-radius: 10px;
 }
 
 
@@ -768,6 +807,33 @@ td {
 }
 
 
+/* ########### */
+/* footer */
+/* ########### */
+.footer_kakaoImg {
+    /* top: 0; */
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.kakaoImg_1 { 
+    width: 50%;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+} 
+.kakaoImg_3 {
+    width: 50%;
+    height: 100px;
+    float: right;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 /* ################################################################ */
 /* 적응형 웹 페이지 */
