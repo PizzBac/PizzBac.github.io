@@ -226,7 +226,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 .div_side_login{              
     display:inline-block;
     float: left;
-    width: 200px;
+    margin-left: 3px;
 }
 
 /* #login_view{display: none;} */
@@ -339,7 +339,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 }
 .btn_login_google{
     text-align: center;
-    width: 160px;
+    width: 140px;
     background-image: url(img/googleLogin.png);
 }
 .btn_login_apple{

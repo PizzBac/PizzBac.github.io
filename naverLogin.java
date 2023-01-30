@@ -14,7 +14,7 @@ public class naverLogin {
 
 
     public static void main(String[] args) {
-        String token = "AAAAOIf6X76YfQec45qxDGw8vj8nbs9NsUVjqhNEqF3KjDa5Lno8MZA4-rXG5r0EDv2zjYVXSydyhsKSmd3lxBbGIc0"; // 네이버 로그인 접근 토큰;
+        String token = "YOUR_ACCESS_TOKEN"; // 네이버 로그인 접근 토큰;
         String header = "Bearer " + token; // Bearer 다음에 공백 추가
 
 
