@@ -14,12 +14,23 @@
     <title>index</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    <!-- 구글로그인 -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- 네이버 로그인 -->
     <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
     <!-- 네이버 로그인정보끌어오기  -->
     <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="UTF-8"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js" charset="UTF-8"></script>
+    <!-- 카카오 로그인 -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+        $('.sidebar').on('click', function () {
+    $('#sidebar').removeClass('active');
+    $('.sidebar').fadeOut();
+});
+    </script>
 </head>
 
 <body>
@@ -51,20 +62,20 @@
                             <li>
                                 <!-- 아래와같이 아이디를 꼭 써준다. -->
                                 <a id="naverIdLogin_loginButton" href="javascript:void(0)">
-                                    <button class="btn_login_naver"></button>
+                                    <button class="btn_login_naver" onclick="hideLogin()"></button>
                                 </a>
                             </li>
                             <li>
-                                <a id="googleIdLogin_loginButton" href="javascript:void(0)">
-                                    <button class="btn_login_google"></button>
+                                <a id="google_login" href="javascript:void(0)">
+                                    <button class="btn_login_google" data-onsuccess="onSignIn" onclick="hideLogin()"></button>
                                 </a>
                             </li>
                             <li>
-                                <a id="appleIdLogin_loginButton" href="javascript:void(0)">
-                                    <button class="btn_login_apple" onclick="clickApple()"></button>
+                                <a id="GgCustomLogin" href="javascript:void(0)">
+                                    <button class="btn_login_apple" onclick="clickApple()" ></button>
                                 </a>
                             </li>
-                            <li>
+                            <li onclick="kakaoLogin();">
                                 <a id="kakaoIdLogin_loginButton" href="javascript:void(0)">
                                     <button class="btn_login_kakao"></button>
                                 </a>

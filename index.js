@@ -66,7 +66,74 @@ if (status) {
 }
 });
 });
+// 구글 로그인
+function handleCredentialResponse(response) {
+    const responsePayload = parseJwt(response.credential);
+    console.log("ID: " + responsePayload.sub);
+    console.log('Full Name: ' + responsePayload.name);
+    console.log('Given Name: ' + responsePayload.given_name);
+    console.log('Family Name: ' + responsePayload.family_name);
+    console.log("Image URL: " + responsePayload.picture);
+    console.log("Email: " + responsePayload.email);
+}
+function parseJwt(token) {
+    var base64Url = token.split('.')[1];
+    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    var jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
 
+    return JSON.parse(jsonPayload);
+};
+window.onload = function () {
+    buildCalendar();  // 웹 페이지가 로드되면 buildCalendar 실행
+    google.accounts.id.initialize({
+        client_id: "297020363981-aj22v44hf4i3npk54aqb2ti39d280tkt.apps.googleusercontent.com",
+        callback: handleCredentialResponse
+    });
+    google.accounts.id.renderButton(
+        document.getElementById("google_login"),
+         { theme: "outline", size: "large" }  // customization attributes
+    );
+    google.accounts.id.prompt(); // also display the One Tap dialog
+}
+// 카카오 로그인 
+Kakao.init('502c3fe3e6df6ef481d4c56f61c900b9'); //발급받은 키 중 javascript키를 사용해준다.
+console.log(Kakao.isInitialized()); // sdk초기화여부판단
+//카카오로그인
+function kakaoLogin() {
+    Kakao.Auth.login({
+    success: function (response) {
+        Kakao.API.request({
+        url: '/v2/user/me',
+        success: function (response) {
+            console.log(response)
+        },
+        fail: function (error) {
+            console.log(error)
+        },
+        })
+    },
+    fail: function (error) {
+        console.log(error)
+    },
+    })
+}
+//카카오로그아웃  
+function kakaoLogout() {
+    if (Kakao.Auth.getAccessToken()) {
+    Kakao.API.request({
+        url: '/v1/user/unlink',
+        success: function (response) {
+            console.log(response)
+        },
+        fail: function (error) {
+        console.log(error)
+        },
+    })
+    Kakao.Auth.setAccessToken(undefined)
+    }
+}  
 function logout(){
     alert("로그아웃 되었습니다.")
     history.go(-1);
@@ -90,9 +157,50 @@ closePopUp();
 }, 1000);
 }
 
-window.onload = function () { 
-    buildCalendar();  // 웹 페이지가 로드되면 buildCalendar 실행
+function hideLogin(){
+    const btn1 = document.getElementById("login_view");
+    if(btn1.style.display !== "none"){
+        btn1.style.display = "none";
+    }
+    else{
+        btn1.style.display = "block";
+    }
 }
+
+function logout(){
+    alert("로그아웃 되었습니다.")
+    history.go(-1);
+}
+function clickApple(){
+    alert("개발중입니다.")
+}
+
+var testPopUp;
+function openPopUp() {
+testPopUp= window.open("https://nid.naver.com/nidlogin.logout", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,width=1,height=1");
+}
+function closePopUp(){
+testPopUp.close();
+}
+
+function naverLogout() {
+openPopUp();
+setTimeout(function() {
+closePopUp();
+}, 1000);
+}
+function hideLogin(){
+    const btn1 = document.getElementById("login_view");
+    if(btn1.style.display !== "none"){
+        btn1.style.display = "none";
+    }
+    else{
+        btn1.style.display = "block";
+    }
+}
+// window.onload = function () { 
+//     buildCalendar();  // 웹 페이지가 로드되면 buildCalendar 실행
+// }
 
 let nowMonth = new Date();  // 현재 달을 페이지를 로드한 날의 달로 초기화
 let today = new Date();     // 페이지를 로드한 날짜를 저장
