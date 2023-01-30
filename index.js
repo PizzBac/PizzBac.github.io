@@ -1,17 +1,40 @@
+// 로그인 / 로그아웃 버튼을 눌렀을 때 이벤트처리
+$(function(){
+    // 로그인 헀을 시에
+    // $("#naverIdLogin_loginButton").click(function(){
+    //     // setTimeout(function(){}, 5000);
+    //     $("#profile_view").css({"display" : "flex"});
+    //     $("#login_view").css({"display" : "none"});
+    // });
+    $("#googleIdLogin_loginButton").click(function(){
+        $("#profile_view").css({"display" : "flex"});
+        $("#login_view").css({"display" : "none"});
+        
+    });
+    $("#appleIdLogin_loginButton").click(function(){
+        $("#profile_view").css({"display" : "flex"});
+        $("#login_view").css({"display" : "none"});
+    });
+    $("#kakaoIdLogin_loginButton").click(function(){
+        $("#profile_view").css({"display" : "flex"});
+        $("#login_view").css({"display" : "none"});
+    });
 
-$('.sidebar').on('click', function () {
-    // $('#sidebar').removeClass('active');
-    $('.sidebar').fadeOut();
+    // 로그아웃 했을 시에
+    $(".btn_logout").click(function(){
+        $("#profile_view").css({"display" : "none"});
+        $("#login_view").css({"display" : "inline-block"});
+    });
 });
 
 
 
-
+// 네이버 로그인
 var naverLogin = new naver.LoginWithNaverId(
     {
         clientId: "bXtVxf20aEiH_6zM5yjf", //내 애플리케이션 정보에 cliendId를 입력해줍니다.
-        // callbackUrl: "https://pizzbac.github.io/", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
-        callbackUrl: "http://127.0.0.1:3000/index.html",
+        callbackUrl: "https://pizzbac.github.io/", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
+        // callbackUrl: "http://127.0.0.1:3000/index.html",
         isPopup: false,
         callbackHandle: true
     }
@@ -24,13 +47,20 @@ naverLogin.getLoginStatus(function (status) {
 if (status) {
     var email = naverLogin.user.getEmail(); // 필수로 설정할것을 받아와 아래처럼 조건문을 줍니다.
     
-    console.log(naverLogin.user); 
+    console.log(naverLogin.user);
     
     if( email == undefined || email == null) {
         alert("이메일은 필수정보입니다. 정보제공을 동의해주세요.");
         naverLogin.reprompt();
         return;
     }
+
+    $("#naverIdLogin_loginButton").click(function(){
+            // setTimeout(function(){}, 5000);
+            $("#profile_view").css({"display" : "flex"});
+            $("#login_view").css({"display" : "none"});
+        });
+
 } else {
     console.log("callback 처리에 실패하였습니다.");
 }

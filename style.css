@@ -223,11 +223,13 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     transition: background-color 0.24s linear; 
 }
 .div_side_login{
-    display:inline-block;
     float: left;
-    width: 200px;
+
+    margin-left: 20px;
+    width: 400px;
 }
-#login_view{display: none;}
+#login_view{display: inline-block;} /*inline-block / none*/
+#profile_view{display: none;} /*flex / none*/
 
 .img_profile{
     width: 100px;
@@ -241,8 +243,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 }
 
 .div_side_profile{
-    display: flex;
-    width: auto;
+    width:  auto;
     height: 200px;
 	align-items: center;
 	justify-content: center;
@@ -272,6 +273,28 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 
 .email {
     color: gray;
+}
+
+.btn_logout {
+    float: right;
+
+    /* size */
+    width: 100px;
+    height: 20px;
+    
+    /* style */
+    background: rgba(254,229,0,1);
+    opacity: 1;
+    border: none;
+    /* top: 0px; */
+    /* left: 0px; */
+
+    /* radius */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
 }
 /* .div_side_login {
     width: 200px;
