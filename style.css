@@ -225,7 +225,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 .div_side_login{
     float: left;
 
-    margin-left: 20px;
+    margin-left: 3px;
     width: 400px;
 }
 #login_view{display: inline-block;} /*inline-block / none*/
