@@ -3,8 +3,8 @@ var request = require("request");
 const fs = require("fs");
 const axios = require("axios");
 const app = express();
-const client_id = "8bJXfIc3GXBTVkYAc1ng";
-const client_secret = "xDNDEEoVU5";
+const client_id = "id";
+const client_secret = "key";
 const api_url = "https://openapi.naver.com/v1/papago/n2mt";
 const bodyParser = require("body-parser");
 const { json } = require("body-parser");
@@ -27,7 +27,7 @@ async function getKarlo(text) {
       },
       {
         headers: {
-          Authorization: "KakaoAK 6f38534b6b57b7e6d1b065f0e329b791",
+          Authorization: "KakaoAK api key",
           "Content-Type": "application/json",
         },
       }
@@ -69,7 +69,7 @@ app.get("/keyword", function (req, res) {
   
   var headers = {
     "content-type": "application/json",
-    "x-auth-token": "20a7c5dc-589b-49fb-9f96-c7911ae4ff26",
+    "x-auth-token": "api key",
   };
   var dataString = `{"document": "${user_input}"}`;
 
