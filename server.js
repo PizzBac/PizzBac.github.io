@@ -46,6 +46,7 @@ app.all("/", (req, res) => {
 
 app.get("/keyword", function (req, res) {
   let { user_input } = req.query;
+  // 세션에다가 user_input -> 다이어리
 
   var headers = {
     "content-type": "application/json",
@@ -74,6 +75,7 @@ app.get("/keyword", function (req, res) {
 
 app.get("/translate", function (req, res) {
   let keyword = req.query;
+  // 세션에다가 키워드 삽입
   var str = "";
   var json = JSON.stringify(keyword);
   var data = JSON.parse(json);
