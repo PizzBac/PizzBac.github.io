@@ -29,7 +29,7 @@ $(function () {
 // 네이버 로그인
 var naverLogin = new naver.LoginWithNaverId({
   clientId: "bXtVxf20aEiH_6zM5yjf", //내 애플리케이션 정보에 cliendId를 입력해줍니다.
-  callbackUrl: "https://pizzbac.github.io/", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
+  callbackUrl: "http://localhost:3001/start", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
   // callbackUrl: "http://127.0.0.1:3000/index.html",
   isPopup: false,
   callbackHandle: true,
