@@ -1,6 +1,7 @@
 const express = require("express");
 var request = require("request");
 const fs = require("fs");
+const axios = require("axios");
 const app = express();
 const client_id = "8bJXfIc3GXBTVkYAc1ng";
 const client_secret = "xDNDEEoVU5";
@@ -12,11 +13,36 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+async function getKarlo(text) {
+  try {
+    const response = await axios.post(
+      "https://api.kakaobrain.com/v1/inference/karlo/t2i",
+      {
+        prompt: {
+          text: `"${text}"`,
+          batch_size: 1,
+        },
+      },
+      {
+        headers: {
+          Authorization: "KakaoAK 6f38534b6b57b7e6d1b065f0e329b791",
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    const resData = JSON.stringify(response.data);
+    const parseData = JSON.parse(resData);
+    const decode = Buffer.from(parseData.images[0].image, "base64");
+    let makeDecodeFile = fs.writeFileSync("./public/img/res.png", decode);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 app.all("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
-
-// user_input
 
 app.get("/keyword", function (req, res) {
   let { user_input } = req.query;
@@ -46,26 +72,14 @@ app.get("/keyword", function (req, res) {
   });
 });
 
-// app.all('/translate', (res, req) => {
-//   var{translatedText} = req.query;
-//   console.log(translatedText)
-// });
-
 app.get("/translate", function (req, res) {
   let keyword = req.query;
-  // console.log("출력성공");
-  // console.log(keyword);
   var str = "";
-  console.log(keyword);
   var json = JSON.stringify(keyword);
   var data = JSON.parse(json);
   var json2 = JSON.stringify(data);
   var data2 = JSON.parse(json2);
   var data3 = JSON.parse(data2.translatedText);
-  // var data2 = JSON.parse(json2)
-  // console.log(data.sentences.keywords);
-  // console.log(data3.sentences[0].keywords[0].word);
-  // console.log(data2.length.);
   for (var i = 0; i < data3.sentences.length; ++i) {
     for (var j = 0; j < data3.sentences[i].keywords.length; ++j) {
       str += data3.sentences[i].keywords[j].word + ",";
@@ -92,13 +106,9 @@ app.get("/translate", function (req, res) {
   request.post(options, function (error, response, body) {
     //리퀘스트
     if (!error && response.statusCode == 200) {
-      //res.writeHead(200, {'Content-Type': 'text/json;charset=utf-8'});
-      //let transJSON=JSON.stringify(body);
       let trans = JSON.parse(body);
-      //fs.writeFileSync('sendData.json',body);
       let translated = trans.message.result.translatedText;
       console.log(trans);
-      //let translatedText = body.message.result.translatedText;
       console.log(translated);
       res.redirect("loading?translatedText=" + translated);
     } else {
@@ -108,11 +118,12 @@ app.get("/translate", function (req, res) {
   }); //리퀘스트
 });
 
-app.all("/loading", function (req, res) {
+app.all("/loading", async function (req, res) {
   let { translatedText } = req.query;
   res.sendFile(__dirname + "/loadingjs.html");
   console.log("loading으로 이동");
-  console.log(translatedText);
+  await getKarlo(translatedText);
+  console.log("그림완성");
 });
 
 app.all("/UserResult", function (req, res) {
