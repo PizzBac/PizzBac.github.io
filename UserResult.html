@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <style>
-        @import "./reset.css";
+        @import "/css/reset.css";
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mychelangelo</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
+
 <body>
     <div class="Top_container">
         <header class="header">
@@ -19,8 +21,12 @@
             <label for="menuicon">
                 <nav>
                     <ul type="none" class="header_comp">
-                        <li><h1 class="title01">My</h1></li>
-                        <li><h2 class="title02">Chelangelo</h2></li>
+                        <li>
+                            <h1 class="title01">My</h1>
+                        </li>
+                        <li>
+                            <h2 class="title02">Chelangelo</h2>
+                        </li>
                         <!-- <li><p class="title_desp">record your own perfect day</p></li> -->
                     </ul>
                 </nav>
@@ -36,7 +42,7 @@
                 <div class="div_side_day">
                     <div class="div_side_profile" id="profile_view">
                         <div class="div_profile_img">
-                            <img class="img_profile" src="img/crong1.png">
+                            <img class="img_profile" src="/img/crong1.png">
                         </div>
                         <div class="div_profile">
                             <span class="name">박준형</span>
@@ -69,7 +75,7 @@
                             너와 맞잡은 손이 사라지는 것 같죠
                             어떻게 이별까지 사랑하겠어
                             널 사랑하는 거지.
-                        </span>    
+                        </span>
                     </div>
                     <div class="side_div_keywords">
                         <span class="side_day_title">Keywords</span>
@@ -84,9 +90,9 @@
                     </div>
                 </div>
             </div>
-            
+
         </header>
-    
+
     </div>
 
     <!-- 메인 카드 -->
@@ -96,15 +102,18 @@
 
                 <!-- 버튼과 날짜 -->
                 <ul type="none" class="main_comp">
-                    <li><button type="button" name="back" value="back" id="main_btn2" class="btn_back" onclick="location.href='index.html'"><span> << back </span></button></li>
+                    <li><button type="button" name="back" value="back" id="main_btn2" class="btn_back"
+                            onclick="location.href='index.html'"><span>
+                                << back </span></button></li>
                     <li><span class="main_today" id="main_today"> 0000년 00월 00일 </span></li>
-                    <li><button type="button" name="download" value="download" id="main_btn2" class="btn_download" onclick="location.href='epi.html'"><span>Download</span></button></li>
+                    <li><button type="button" name="download" value="download" id="main_btn2" class="btn_download"
+                            onclick="location.href='epi.html'"><span>Download</span></button></li>
                 </ul>
 
                 <!-- 메인사진 -->
                 <div class="div_main_pic">
-                    <img src="img/res.png" alt="dog" class="user_main_pic" id="main_photo"> 
-                    
+                    <img src="/img/res.png" alt="dog" class="user_main_pic" id="main_photo">
+
                     <!-- 팝업 될 곳 (모달)-->
                     <div class="modal">
                         <button>&times;</button>
@@ -114,25 +123,26 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
 
             <!-- 오른쪽 갤러리 부분 -->
             <div class="div_side_select">
                 <div><button type="button" name="up" value="up" id="btn_result" class="btn_up"></button></div>
                 <ul id="gallery">
-                    <li><img src="img/res.png" alt="dog" id="user_img_side"></li>
-                    <li><img src="img/crong1.png" alt="dog" id="user_img_side"></li>
-                    <li><img src="img/crong2.png" alt="dog" id="user_img_side"></li>
-                    <li><img src="img/crong3.png" alt="dog" id="user_img_side"></li>
-                    <li><img src="img/crong4.png" alt="dog" id="user_img_side"></li>
-                    <li><img src="img/crong5.png" alt="dog" id="user_img_side"></li>
-                    <li><img src="img/crong6.png" alt="dog" id="user_img_side"></li>
+                    <li><img src="/img/res.png" alt="dog" id="user_img_side"></li>
+                    <li><img src="/img/crong1.png" alt="dog" id="user_img_side"></li>
+                    <li><img src="/img/crong2.png" alt="dog" id="user_img_side"></li>
+                    <li><img src="/img/crong3.png" alt="dog" id="user_img_side"></li>
+                    <li><img src="/img/crong4.png" alt="dog" id="user_img_side"></li>
+                    <li><img src="/img/crong5.png" alt="dog" id="user_img_side"></li>
+                    <li><img src="/img/crong6.png" alt="dog" id="user_img_side"></li>
                 </ul>
                 <div><button type="button" name="down" value="down" id="btn_result" class="btn_down"></button></div>
             </div>
-        </article> 
+        </article>
     </form>
-    <script type="text/javascript" src="UserResult.js" defer> </script>
+    <script type="text/javascript" src="/js/UserResult.js" defer> </script>
 </body>
+
 </html>

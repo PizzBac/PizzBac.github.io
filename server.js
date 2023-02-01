@@ -10,6 +10,7 @@ const { json } = require("body-parser");
 const rq_queryStr = require("querystring");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 app.all("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");

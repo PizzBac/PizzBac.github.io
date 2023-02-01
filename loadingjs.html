@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <style>
-        @import "./reset.css";
+        @import "/css/reset.css";
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,23 +15,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </head>
+
 <body onclick="location.href='UserResult.html'">
     <div class="word">Loading...</div>
     <style>
         html {
-        height: 100%;
-    }
-    body {
-        display: flex;
-        height: 100%;
-        background-color: #333;
-    }
-    .word {
-        margin: auto;
-        color: white;
-        font: 700 normal 2.5em 'tahoma';
-        text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
-    }
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            height: 100%;
+            background-color: #333;
+        }
+
+        .word {
+            margin: auto;
+            color: white;
+            font: 700 normal 2.5em 'tahoma';
+            text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+        }
     </style>
 
     <script type="text/javascript">
@@ -64,42 +68,43 @@
             skip_delay = 15,
             speed = 70;
         var wordflick = function () {
-        setInterval(function () {
-            if (forwards) {
-            if (offset >= words[i].length) {
-                ++skip_count;
-                if (skip_count == skip_delay) {
-                forwards = false;
-                skip_count = 0;
+            setInterval(function () {
+                if (forwards) {
+                    if (offset >= words[i].length) {
+                        ++skip_count;
+                        if (skip_count == skip_delay) {
+                            forwards = false;
+                            skip_count = 0;
+                        }
+                    }
                 }
-            }
-            }
-            else {
-            if (offset == 0) {
-                forwards = true;
-                i++;
-                offset = 0;
-                if (i >= len) {
-                i = 0;
+                else {
+                    if (offset == 0) {
+                        forwards = true;
+                        i++;
+                        offset = 0;
+                        if (i >= len) {
+                            i = 0;
+                        }
+                    }
                 }
-            }
-            }
-            part = words[i].substr(0, offset);
-            if (skip_count == 0) {
-            if (forwards) {
-                offset++;
-            }
-            else {
-                offset--;
-            }
-            }
-            $('.word').text(part);
-        },speed);
+                part = words[i].substr(0, offset);
+                if (skip_count == 0) {
+                    if (forwards) {
+                        offset++;
+                    }
+                    else {
+                        offset--;
+                    }
+                }
+                $('.word').text(part);
+            }, speed);
         };
 
         $(document).ready(function () {
-        wordflick();
+            wordflick();
         });
     </script>
 </body>
+
 </html>
