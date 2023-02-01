@@ -1,11 +1,11 @@
 // 로그인 / 로그아웃 버튼을 눌렀을 때 이벤트처리
 $(function () {
   // 로그인 헀을 시에
-  // $("#naverIdLogin_loginButton").click(function(){
-  //     // setTimeout(function(){}, 5000);
-  //     $("#profile_view").css({"display" : "flex"});
-  //     $("#login_view").css({"display" : "none"});
-  // });
+  $("#naverIdLogin_loginButton").click(function(){
+      // setTimeout(function(){}, 5000);
+      $("#profile_view").css({"display" : "flex"});
+      $("#login_view").css({"display" : "none"});
+  });
   $("#googleIdLogin_loginButton").click(function () {
     $("#profile_view").css({ display: "flex" });
     $("#login_view").css({ display: "none" });
@@ -20,10 +20,11 @@ $(function () {
   });
 
   // 로그아웃 했을 시에
-  $(".btn_logout").click(function () {
-    $("#profile_view").css({ display: "none" });
-    $("#login_view").css({ display: "inline-block" });
-  });
+  // $(".btn_logout").click(function () {
+  //   $("#profile_view").css({ display: "none" });
+  //   $("#login_view").css({ display: "inline-block" });
+  //   naver.Auth.setAccessToken(undefined);
+  // });
 });
 
 // 네이버 로그인
@@ -119,90 +120,45 @@ function kakaoLogin() {
     },
   });
 }
-//카카오로그아웃
-function kakaoLogout() {
-  if (Kakao.Auth.getAccessToken()) {
-    Kakao.API.request({
-      url: "/v1/user/unlink",
-      success: function (response) {
-        console.log(response);
-      },
-      fail: function (error) {
-        console.log(error);
-      },
-    });
-    Kakao.Auth.setAccessToken(undefined);
-  }
+
+function clickApple() {
+  alert("개발중입니다.");
 }
+
+var testPopUp;
+function openPopUp() {
+  testPopUp = window.open(
+    "https://nid.naver.com/nidlogin.logout",
+    "_blank",
+    "toolbar=yes,scrollbars=yes,resizable=yes,width=1,height=1"
+  );
+}
+function closePopUp() {
+  testPopUp.close();
+}
+
 function logout() {
+  openPopUp();
+  setTimeout(function () {
+    closePopUp();
+  }, 1000);
   alert("로그아웃 되었습니다.");
-}
-function clickApple() {
-  alert("개발중입니다.");
-}
-
-var testPopUp;
-function openPopUp() {
-  testPopUp = window.open(
-    "https://nid.naver.com/nidlogin.logout",
-    "_blank",
-    "toolbar=yes,scrollbars=yes,resizable=yes,width=1,height=1"
-  );
-}
-function closePopUp() {
-  testPopUp.close();
-}
-
-function naverLogout() {
-  openPopUp();
-  setTimeout(function () {
-    closePopUp();
-  }, 1000);
-}
-
-function hideLogin() {
-  const btn1 = document.getElementById("login_view");
-  if (btn1.style.display !== "none") {
-    btn1.style.display = "none";
-  } else {
-    btn1.style.display = "block";
+    $("#profile_view").css({ display: "none" });
+    $("#login_view").css({ display: "inline-block" });
   }
-}
 
-// function logout() {
-//   alert("로그아웃 되었습니다.");
-//   history.go(-1);
+// function hideLogin() {
+//   const btn1 = document.getElementById("login_view");
+//   if (btn1.style.display !== "none") {
+//     btn1.style.display = "none";
+//   } else {
+//     btn1.style.display = "block";
+//   }
 // }
-function clickApple() {
-  alert("개발중입니다.");
-}
 
-var testPopUp;
-function openPopUp() {
-  testPopUp = window.open(
-    "https://nid.naver.com/nidlogin.logout",
-    "_blank",
-    "toolbar=yes,scrollbars=yes,resizable=yes,width=1,height=1"
-  );
-}
-function closePopUp() {
-  testPopUp.close();
-}
 
-function naverLogout() {
-  openPopUp();
-  setTimeout(function () {
-    closePopUp();
-  }, 1000);
-}
-function hideLogin() {
-  const btn1 = document.getElementById("login_view");
-  if (btn1.style.display !== "none") {
-    btn1.style.display = "none";
-  } else {
-    btn1.style.display = "block";
-  }
-}
+
+
 // window.onload = function () {
 //     buildCalendar();  // 웹 페이지가 로드되면 buildCalendar 실행
 // }
