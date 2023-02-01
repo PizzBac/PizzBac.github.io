@@ -6,11 +6,6 @@ window.onload = function() {
   document.getElementById("main_today").innerHTML = date;
 }
 
-$('.sidebar').on('click', function () {
-  // $('#sidebar').removeClass('active');
-  $('.sidebar').fadeOut();
-});
-
 // 이미지 클릭시 모달 창
 $(function(){
   // 	이미지 클릭시 해당 이미지 모달
