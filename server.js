@@ -95,6 +95,7 @@ app.get("/keyword", function (req, res) {
 app.get("/translate", function (req, res) {
   let keyword = req.query;
   // 세션에다가 키워드 삽입
+  
   var str = "";
   var json = JSON.stringify(keyword);
   var data = JSON.parse(json);
@@ -115,7 +116,8 @@ app.get("/translate", function (req, res) {
   };
   var change_str = str.slice(0, -1);
   console.log(change_str);
-
+  req.session.keyword = change_str;
+  req.session.save(() => {});
   const options = {
     url: api_url,
     form: { source: "ko", target: "en", text: change_str },
@@ -151,6 +153,9 @@ app.all("/UserResult", function (req, res) {
   console.log("결과 이동");
   if(req.session.input){
     console.log(req.session.input);
+  }
+  if(req.session.keyword){
+    console.log(req.session.keyword);
   }
   res.sendFile(__dirname + "/UserResult.html");
 });
