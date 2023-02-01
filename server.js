@@ -9,6 +9,8 @@ const api_url = "https://openapi.naver.com/v1/papago/n2mt";
 const bodyParser = require("body-parser");
 const { json } = require("body-parser");
 const rq_queryStr = require("querystring");
+const session = require("express-session");
+const MemoryStore = require("memorystore")(session);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -44,10 +46,27 @@ app.all("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
+app.all("/start", (req, res) => {
+  res.sendFile(__dirname + "/diary.html");
+});
+
+// user_input
+//세션 미들웨어 생성
+app.use(
+  session({
+    secret: "12345",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false },
+  })
+);
+
 app.get("/keyword", function (req, res) {
   let { user_input } = req.query;
-  // 세션에다가 user_input -> 다이어리
-
+  // session user_input 저장코드 작성-다이어리
+  req.session.input = user_input;
+  req.session.save(() => {});
+  
   var headers = {
     "content-type": "application/json",
     "x-auth-token": "20a7c5dc-589b-49fb-9f96-c7911ae4ff26",
@@ -130,6 +149,9 @@ app.all("/loading", async function (req, res) {
 
 app.all("/UserResult", function (req, res) {
   console.log("결과 이동");
+  if(req.session.input){
+    console.log(req.session.input);
+  }
   res.sendFile(__dirname + "/UserResult.html");
 });
 
