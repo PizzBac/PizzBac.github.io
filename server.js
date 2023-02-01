@@ -115,4 +115,9 @@ app.all("/loading", function (req, res) {
   console.log(translatedText);
 });
 
+app.all("/UserResult", function (req, res) {
+  console.log("결과 이동");
+  res.sendFile(__dirname + "/UserResult.html");
+});
+
 app.listen(3001);
