@@ -136,7 +136,6 @@ function kakaoLogout() {
 }
 function logout() {
   alert("로그아웃 되었습니다.");
-  location.href = "http://127.0.0.1:3001/start";
 }
 function clickApple() {
   alert("개발중입니다.");
@@ -170,10 +169,10 @@ function hideLogin() {
   }
 }
 
-function logout() {
-  alert("로그아웃 되었습니다.");
-  history.go(-1);
-}
+// function logout() {
+//   alert("로그아웃 되었습니다.");
+//   history.go(-1);
+// }
 function clickApple() {
   alert("개발중입니다.");
 }
