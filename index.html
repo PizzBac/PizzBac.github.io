@@ -21,15 +21,16 @@
     <!-- 네이버 로그인 -->
     <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
     <!-- 네이버 로그인정보끌어오기  -->
-    <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
+        charset="UTF-8"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js" charset="UTF-8"></script>
     <!-- 카카오 로그인 -->
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script>
         $('.sidebar').on('click', function () {
-    $('#sidebar').removeClass('active');
-    $('.sidebar').fadeOut();
-});
+            $('#sidebar').removeClass('active');
+            $('.sidebar').fadeOut();
+        });
     </script>
 </head>
 
@@ -67,12 +68,13 @@
                             </li>
                             <li>
                                 <a id="google_login" href="javascript:void(0)">
-                                    <button class="btn_login_google" data-onsuccess="onSignIn" onclick="hideLogin()"></button>
+                                    <button class="btn_login_google" data-onsuccess="onSignIn"
+                                        onclick="hideLogin()"></button>
                                 </a>
                             </li>
                             <li>
                                 <a id="GgCustomLogin" href="javascript:void(0)">
-                                    <button class="btn_login_apple" onclick="clickApple()" ></button>
+                                    <button class="btn_login_apple" onclick="clickApple()"></button>
                                 </a>
                             </li>
                             <li onclick="kakaoLogin();">
@@ -113,13 +115,15 @@
                     <img src="img/res.png" alt="dog" id="user_img">
                 </div>
             </div>
-            <img class="kakaoImg_3" src="https://statics.goorm.io/codingparty/2021-S2/assets/images/mainLogoFriends_1920.svg" alt="kakao_image3">
+            <img class="kakaoImg_3"
+                src="https://statics.goorm.io/codingparty/2021-S2/assets/images/mainLogoFriends_1920.svg"
+                alt="kakao_image3">
         </header>
     </div>
     <hr class="hr_horizon">
 
     <!-- 메인 페이지 -->
-    <form action="keyword">
+    <form action="keyword" method="get">
         <article class="main">
 
 
@@ -165,7 +169,8 @@
                 <button type="submit" name="submit" value="Submit" id="main_btn" class="btn_submit">Submit</button>
                 <!-- 서브밋 버튼은 href가 안됨. -->
             </div>
-            <img src="https://bspluci.github.io/project/kakaofriends/img/10_03.gif" alt="" style="width: 50px; height:70px; margin-top: 500px">
+            <img src="https://bspluci.github.io/project/kakaofriends/img/10_03.gif" alt=""
+                style="width: 50px; height:70px; margin-top: 500px">
         </article>
     </form>
     <footer>
