@@ -41,6 +41,10 @@ async function getKarlo(text) {
 }
 
 app.all("/", (req, res) => {
+  res.sendFile(__dirname + "/epi.html");
+});
+
+app.all("/start", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
