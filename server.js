@@ -59,7 +59,7 @@ app.get("/keyword", function (req, res) {
 
   var headers = {
     "content-type": "application/json",
-    "x-auth-token": "20a7c5dc-589b-49fb-9f96-c7911ae4ff26",
+    "x-auth-token": "5ef3ea8e-5a23-42d7-b99c-4a7e607678e5",
   };
   var dataString = `{"document": "${user_input}"}`;
 
@@ -144,6 +144,10 @@ app.all("/UserResult", function (req, res) {
   console.log(req.cookies.input);
   console.log(req.cookies.key);
   res.sendFile(__dirname + "/UserResult.html");
+});
+
+app.all("/download", function (req, res) {
+  res.download(__dirname + "/public/img/res.png", "res.png");
 });
 
 app.listen(3001);
