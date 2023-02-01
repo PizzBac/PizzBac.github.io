@@ -1,10 +1,10 @@
 {
-  "name": "keywordapi",
+  "name": "mychelangelo",
   "version": "1.0.0",
-  "main": "keyword.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node PizzaBac.github.io\\keyword.js"
+    "start": "node ./server.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,5 +15,13 @@
     "reques": "^0.0.1-security",
     "request": "^2.88.2"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PizzBac/PizzBac.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PizzBac/PizzBac.github.io/issues"
+  },
+  "homepage": "https://github.com/PizzBac/PizzBac.github.io#readme",
   "description": ""
 }
