@@ -3,9 +3,10 @@ var request = require("request");
 const fs = require("fs");
 const axios = require("axios");
 const cookieParser = require("cookie-parser");
+require("dotenv").config();
 const app = express();
-const client_id = "id"; // 파파고 아이디
-const client_secret = "key"; // 파파고 키
+const client_id = process.env.papagoID; // 파파고 아이디
+const client_secret = process.env.papagoSecret; // 파파고 키
 const api_url = "https://openapi.naver.com/v1/papago/n2mt";
 const bodyParser = require("body-parser");
 const { json } = require("body-parser");
@@ -26,7 +27,7 @@ async function getKarlo(text) {
       },
       {
         headers: {
-          Authorization: "KakaoAK api key",
+          Authorization: `KakaoAK ${process.env.karloAPIKey}`,
           "Content-Type": "application/json",
         },
       }
@@ -59,7 +60,7 @@ app.get("/keyword", function (req, res) {
 
   var headers = {
     "content-type": "application/json",
-    "x-auth-token": "api key",
+    "x-auth-token": `${process.env.keywordAPIKey}`,
   };
   var dataString = `{"document": "${user_input}"}`;
 
