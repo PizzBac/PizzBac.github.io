@@ -136,7 +136,8 @@ function kakaoLogout() {
 }  
 function logout(){
     alert("로그아웃 되었습니다.")
-    history.go(-1);
+    location.href = "http://127.0.0.1:3000/index.html";
+    
 }
 function clickApple(){
     alert("개발중입니다.")
