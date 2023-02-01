@@ -2,18 +2,17 @@ const express = require("express");
 var request = require("request");
 const fs = require("fs");
 const axios = require("axios");
+const cookieParser = require("cookie-parser");
 const app = express();
 const client_id = "8bJXfIc3GXBTVkYAc1ng";
 const client_secret = "xDNDEEoVU5";
 const api_url = "https://openapi.naver.com/v1/papago/n2mt";
 const bodyParser = require("body-parser");
 const { json } = require("body-parser");
-const rq_queryStr = require("querystring");
-const session = require("express-session");
-const MemoryStore = require("memorystore")(session);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.use(cookieParser());
 
 async function getKarlo(text) {
   try {
@@ -52,21 +51,12 @@ app.all("/start", (req, res) => {
 
 // user_input
 //세션 미들웨어 생성
-app.use(
-  session({
-    secret: "12345",
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false },
-  })
-);
 
 app.get("/keyword", function (req, res) {
   let { user_input } = req.query;
   // session user_input 저장코드 작성-다이어리
-  req.session.input = user_input;
-  req.session.save(() => {});
-  
+  res.cookie("input", user_input, { maxAge: 60000 });
+
   var headers = {
     "content-type": "application/json",
     "x-auth-token": "20a7c5dc-589b-49fb-9f96-c7911ae4ff26",
@@ -94,8 +84,7 @@ app.get("/keyword", function (req, res) {
 
 app.get("/translate", function (req, res) {
   let keyword = req.query;
-  // 세션에다가 키워드 삽입
-  
+
   var str = "";
   var json = JSON.stringify(keyword);
   var data = JSON.parse(json);
@@ -115,9 +104,7 @@ app.get("/translate", function (req, res) {
     );
   };
   var change_str = str.slice(0, -1);
-  console.log(change_str);
-  req.session.keyword = change_str;
-  req.session.save(() => {});
+  res.cookie("key", change_str, { maxAge: 60000 });
   const options = {
     url: api_url,
     form: { source: "ko", target: "en", text: change_str },
@@ -151,12 +138,11 @@ app.all("/loading", async function (req, res) {
 
 app.all("/UserResult", function (req, res) {
   console.log("결과 이동");
-  if(req.session.input){
-    console.log(req.session.input);
-  }
-  if(req.session.keyword){
-    console.log(req.session.keyword);
-  }
+  // if (req.session.input) {
+  //   console.log(req.session.input);
+  // }
+  console.log(req.cookies.input);
+  console.log(req.cookies.key);
   res.sendFile(__dirname + "/UserResult.html");
 });
 

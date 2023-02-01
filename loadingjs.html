@@ -43,7 +43,7 @@
         }
     </style>
 
-    <script type="text/javascript">
+    <script type="text/javascript" defer>
         // var getParameters = function (paramName) {
         //     // 리턴값을 위한 변수 선언
         //     var returnValue;
@@ -64,7 +64,13 @@
         // const split = sentence.split(',');
 
         // var words = Array.isArray(split),
-        var words = ['안녕하세요 2022년 1월 27일 금요일입니다.', '오늘은 날씨가 화창하니 좋네요', '우리모두 화이팅', '사랑합니다. 고맙습니다.', '점심 뭐먹지'],
+        function get_cookie(name) {
+            var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+            return value ? value[2] : null;
+        }
+
+        console.log('로딩중 : ' + decodeURI(get_cookie('input')));
+        var words = [decodeURI(get_cookie('input'))],
             part,
             i = 0,
             offset = 0,
