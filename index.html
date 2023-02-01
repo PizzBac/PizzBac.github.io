@@ -1,184 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
-    <style>
-        @import "/css/reset.css";
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-        @import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
-        @import "/java/naverLogin.java";
-    </style>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- 구글로그인 -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- 네이버 로그인 -->
-    <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
-    <!-- 네이버 로그인정보끌어오기  -->
-    <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
-        charset="UTF-8"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js" charset="UTF-8"></script>
-    <!-- 카카오 로그인 -->
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-    <script>
-        $('.sidebar').on('click', function () {
-            $('#sidebar').removeClass('active');
-            $('.sidebar').fadeOut();
-        });
-    </script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="5;url=/start">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="/css/epi.css">
+  <title>Document</title>
 </head>
 
 <body>
-    <div class="Top_container">
-        <header class="header">
-            <input type="checkbox" id="menuicon">
-            <label for="menuicon">
-                <nav>
-                    <ul type="none" class="header_comp">
-                        <li>
-                            <h1 class="title01">My</h1>
-                        </li>
-                        <li>
-                            <h2 class="title02">Chelangelo</h2>
-                        </li>
-                        <!-- <li><p class="title_desp">record your own perfect day</p></li> -->
-                    </ul>
-                </nav>
-            </label>
-            <div class="sidebar">
-                <div class="div_side_title">
-                    <a class="fabicon" href="index.html"></a>
-                    <p class="side_title">My Chelangelo</p>
-                </div>
-                <hr class="side_hr_horizon">
-                <div class="side_comp">
-                    <div class="div_side_login" id="login_view">
-                        <ul>
-                            <li>
-                                <!-- 아래와같이 아이디를 꼭 써준다. -->
-                                <a id="naverIdLogin_loginButton" href="javascript:void(0)">
-                                    <button class="btn_login_naver" onclick="hideLogin()"></button>
-                                </a>
-                            </li>
-                            <li>
-                                <a id="google_login" href="javascript:void(0)">
-                                    <button class="btn_login_google" data-onsuccess="onSignIn"
-                                        onclick="hideLogin()"></button>
-                                </a>
-                            </li>
-                            <li>
-                                <a id="GgCustomLogin" href="javascript:void(0)">
-                                    <button class="btn_login_apple" onclick="clickApple()"></button>
-                                </a>
-                            </li>
-                            <li onclick="kakaoLogin();">
-                                <a id="kakaoIdLogin_loginButton" href="javascript:void(0)">
-                                    <button class="btn_login_kakao"></button>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- <img src="" alt=""> -->
-                        <!-- <div class="google_login">소셜 로그인 div</div> -->
-                    </div>
-                    <div class="div_side_profile" id="profile_view">
-                        <div class="div_profile_img">
-                            <img class="img_profile" src="/img/crong1.png">
-                        </div>
-                        <div class="div_profile">
-                            <p class="name">박준형</p>
-                            <span class="nickname">크롱크롱 님</span>
-                            <span class="email">kk_crong@naver.com</span>
-                            <div class="div_profile_logout">
-                                <button class="btn_logout" onclick="logout()">로그아웃</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="side_language">
-                    <div> <input id="option-one" name="radio" value="kor" checked="checked" type="radio"> <label
-                            for="option-one"> <span></span> 한국어(Kor) </label> </div>
-                    <div> <input id="option-two" name="radio" value="eng" type="radio"> <label for="option-two">
-                            <span></span> 영어(Eng) </label> </div>
-                </div>
-                <div class="div_side_pic">
-                    <img src="/img/res.png" alt="dog" id="user_img">
-                    <img src="/img/res.png" alt="dog" id="user_img">
-                    <img src="/img/res.png" alt="dog" id="user_img">
-                    <img src="/img/res.png" alt="dog" id="user_img">
-                    <img src="/img/res.png" alt="dog" id="user_img">
-                    <img src="/img/res.png" alt="dog" id="user_img">
-                </div>
-            </div>
-            <img class="kakaoImg_3"
-                src="https://statics.goorm.io/codingparty/2021-S2/assets/images/mainLogoFriends_1920.svg"
-                alt="kakao_image3">
-        </header>
+  <div class="content">
+    <div class="content__container">
+      <p class="content__container__text">
+        <span class="highlight">나</span><span>의 첫번째</span>
+      </p>
+
+      <ul class="content__container__list">
+        <li class="content__container__list__item">" 다이어리 "</li>
+        <li class="content__container__list__item">Michelangelo</li>
+        <li class="content__container__list__item"><span class="highlight">My</span>chelangelo</li>
+        <li class="content__container__list__item">미켈란켈로</li>
+      </ul>
     </div>
-    <hr class="hr_horizon">
-
-    <!-- 메인 페이지 -->
-    <form action="keyword" method="get">
-        <article class="main">
-
-
-            <!-- 달력 카드 -->
-            <div class="div_calendar">
-                <table class="Calendar">
-                    <thead>
-                        <tr>
-                            <td onClick="prevCalendar();" style="cursor:pointer;">&#60;</td>
-                            <td colspan="5">
-                                <span id="calYear"></span>년
-                                <span id="calMonth"></span>월
-                            </td>
-                            <td onClick="nextCalendar();" style="cursor:pointer;">&#62;</td>
-                        </tr>
-                        <tr>
-                            <td>일</td>
-                            <td>월</td>
-                            <td>화</td>
-                            <td>수</td>
-                            <td>목</td>
-                            <td>금</td>
-                            <td>토</td>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- 일기 입력 카드 -->
-            <div name="div_inputTxtPic" class="div_inputTxtPic">
-                <div class="div_day_info">
-                    <input type="text" id="period_1" class="day_info" placeholder="오늘의 날짜">
-                    <input type="text" id="period_2" class="day_info" placeholder="햇살이 맑음">
-                    <input type="text" id="period_3" class="day_info" placeholder="매우 상쾌함">
-                </div>
-                <textarea name="user_input" class="user_input_textarea" placeholder="오늘의 하루를 기록해보세요."></textarea>
-                <!-- 버튼 두개 -->
-                <button type="reset" name="reset" value="Clear" id="main_btn" class="btn_reset"
-                    onClick="location.reload()">Clear</button>
-                <button type="submit" name="submit" value="Submit" id="main_btn" class="btn_submit">Submit</button>
-                <!-- 서브밋 버튼은 href가 안됨. -->
-            </div>
-            <img src="https://bspluci.github.io/project/kakaofriends/img/10_03.gif" alt=""
-                style="width: 50px; height:70px; margin-top: 500px">
-        </article>
-    </form>
-    <footer>
-        <div class="footer_kakaoImg">
-            <img class="kakaoImg_1" src="https://newsimg.sedaily.com/2020/11/24/1ZAJ6PH85M_1.jpg" alt="kakao_image1">
-        </div>
-    </footer>
-    <script type="text/javascript" src="/js/index.js"></script>
+  </div>
 </body>
 
 </html>

@@ -41,11 +41,11 @@ async function getKarlo(text) {
 }
 
 app.all("/", (req, res) => {
-  res.sendFile(__dirname + "/epi.html");
+  res.sendFile(__dirname + "/index.html");
 });
 
 app.all("/start", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "/diary.html");
 });
 
 app.get("/keyword", function (req, res) {
