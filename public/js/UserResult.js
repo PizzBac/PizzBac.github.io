@@ -10,15 +10,15 @@ window.onload = function () {
     "일";
   document.getElementById("main_today").innerHTML = date;
 
-  var diary = decodeURI(get_cookie("input"));
-  var keys = decodeURI(get_cookie("key"));
+  var diary = decodeURIComponent(decodeURI(get_cookie("input")));
+  var keys = decodeURIComponent(decodeURI(get_cookie("key")));
 
   var sideTextEl = document.querySelector(".side_day_text");
   sideTextEl.innerText = diary;
 
   var keyosrdsEl = document.querySelector(".side_div_keywords ul");
 
-  var keyVal = keys.split("%2C");
+  var keyVal = keys.split(",");
   console.log(keyVal);
   keyVal.forEach((val) => {
     console.log(val);
