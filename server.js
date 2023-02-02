@@ -105,7 +105,7 @@ app.get("/translate", function (req, res) {
     );
   };
   var change_str = str.slice(0, -1);
-  res.cookie("key", change_str, { maxAge: 60000 });
+  res.cookie("key", change_str, { maxAge: 600000 });
   const options = {
     url: api_url,
     form: { source: "ko", target: "en", text: change_str },
