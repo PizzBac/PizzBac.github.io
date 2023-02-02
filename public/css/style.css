@@ -1,56 +1,21 @@
-/* .bd_header {
-    width: 100%;
-    height: 832px;
-    background: rgba(255,255,255,1);
-    opacity: 1;
-    display: inline-block;
-    top: 0px;
-    left: 10px;
-    overflow: hidden;
-} */
 body {
   background: white;
-  /* macbook-air: 2560x1600 */
-  /* 1440 x 900 */
-  /* width: 1440px; */
   height: 1600px;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
 }
 /* 눈을 편안하게 하는 색깔
 1. 하늘색계열: R: 214/ G: 230/ B:  245
 2. 연한녹색계열: R: 181/ G: 214/ B: 146
 3. 진한녹색계열: R: 163/ G: 204/  B: 163
 */
-/* .Top_container {
-    width:1440px;
-	margin:0 auto;
-} */
 
 header {
   width: 100%;
   height: 50px;
-  /* position: absolute; */
-
-  /* flex: left; */
-  /* background-color: pink; */
-
-  /* justify-content: center; */
-  /* position: absolute; */
-  /* position: relative; */
-  /* text-align: left; */
-  /* display: inline-block; */
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: space-between; */
 }
 
 .header_comp {
   height: 50px;
   position: relative;
-  /* align-items: left; */
-  /* display: inline-block; */
   display: flex;
   align-items: center;
   justify-content: left;
@@ -66,8 +31,6 @@ div[class="sidebar"] {
   left: -400px;
   z-index: 1;
   transition: all 0.35s;
-
-  /* filter: drop-shadow(10px 5px 5px #494848); */
 }
 
 input[id="menuicon"]:checked + label + div {
@@ -82,8 +45,6 @@ input[id="menuicon"] + label {
   width: 30px;
   height: 30px;
   position: fixed;
-  /* top: 30; */
-  /* left: 30; */
   margin-top: 20px;
   margin-left: 30px;
   transition: all 0.35s;
@@ -102,7 +63,6 @@ input[id="menuicon"]:checked + label {
 
 .title01 {
   font-size: 70px;
-  /* position: absolute; */
   margin-left: 100px;
   letter-spacing: 0.5rem;
   font-weight: bold;
@@ -112,20 +72,17 @@ input[id="menuicon"]:checked + label {
 .title02 {
   font-size: 50px;
   margin-left: 10px;
-  /* position: absolute; */
   letter-spacing: 0.25rem;
   font-family: "Dancing Script", cursive;
 }
 
 .title_desp {
   margin-left: 40px;
-  /* position: absolute; */
 }
 
 .hr_horizon {
   width: 100%;
   margin-top: 50px;
-  /* position: fixed; */
 }
 
 /* ################################################################ */
@@ -144,14 +101,11 @@ input[id="menuicon"]:checked + label {
   height: 70px;
   background: url("https://cdn-icons-png.flaticon.com/512/2970/2970217.png")
     no-repeat 0 1px / contain;
-  /* margin-top: 10px; */
-  /* margin-left: 150px; */
 }
 
 .side_title {
   font-size: 30px;
   margin-left: 10px;
-  /* position: absolute; */
   letter-spacing: 0.25rem;
   font-family: "Dancing Script", cursive;
   text-align: center;
@@ -160,7 +114,6 @@ input[id="menuicon"]:checked + label {
 }
 
 .side_hr_horizon {
-  /* width: 100%; */
   height: 5px;
 }
 
@@ -225,7 +178,6 @@ input[type="radio"]:checked + label span {
   float: left;
 
   margin-left: 3px;
-  width: 400px;
 }
 #login_view {
   display: inline-block;
@@ -289,8 +241,6 @@ input[type="radio"]:checked + label span {
   background: rgba(254, 229, 0, 1);
   opacity: 1;
   border: none;
-  /* top: 0px; */
-  /* left: 0px; */
 
   /* radius */
   border-top-left-radius: 20px;
@@ -298,27 +248,8 @@ input[type="radio"]:checked + label span {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
-/* .div_side_login {
-    width: 200px;
-    height: 50px;
-
-    background-image: url("img/login.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-} */
-
-/* .side_language {
-    font-size: 20px; 
-    margin-left: 10px;
-    position: absolute;
-    letter-spacing: 0.25rem;
-    font-family: 'Dancing Script', cursive;
-}  */
 
 .div_side_pic {
-  /* display: inline-block; */
-  /* display: flex; */
   align-items: center;
   justify-content: left;
   margin-left: 94px;
@@ -333,7 +264,6 @@ input[type="radio"]:checked + label span {
 #user_img {
   width: 206px;
   height: 206px;
-  /* margin-left: 44px; */
   padding-top: 50px;
 }
 .div_side_login ul li {
@@ -375,8 +305,6 @@ input[type="radio"]:checked + label span {
 /* Main View */
 /* ################################################################ */
 .main {
-  /* width: 1275px; */
-  /* height: 800px; */
   background-color: white;
   display: flex;
   justify-content: center;
@@ -385,8 +313,6 @@ input[type="radio"]:checked + label span {
 }
 
 .div_MainCal {
-  /* background-color: pink; */
-
   /* size */
   width: 500px;
   height: 600px;
@@ -427,7 +353,6 @@ input[type="radio"]:checked + label span {
   background-repeat: no-repeat;
   background-position: center;
   padding-left: 30px;
-  /* padding-top: 50px; */
 }
 
 .user_input_textarea {
@@ -459,8 +384,6 @@ input[type="radio"]:checked + label span {
   background: rgba(254, 229, 0, 1);
   opacity: 1;
   border: none;
-  /* top: 0px; */
-  /* left: 0px; */
 
   /* radius */
   border-top-left-radius: 20px;
@@ -480,9 +403,6 @@ input[type="radio"]:checked + label span {
 /* __UserResult__.html */
 /* ######################################################################################################## */
 .div_side_day {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
   width: auto;
   height: 800px;
   overflow-y: scroll;
@@ -535,7 +455,6 @@ input[type="radio"]:checked + label span {
 
   position: relative;
   display: inline-block;
-  /* float: left; */
 
   margin-top: 20px;
   margin-left: 40px;
@@ -548,7 +467,6 @@ input[type="radio"]:checked + label span {
   background-color: white;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   margin-top: 100px;
 }
 
@@ -559,8 +477,6 @@ input[type="radio"]:checked + label span {
 .main_comp {
   height: 50px;
   position: relative;
-  /* align-items: left; */
-  /* display: inline-block; */
   display: flex;
   align-items: center;
   justify-content: left;
@@ -601,7 +517,6 @@ input[type="radio"]:checked + label span {
   margin-left: 150px;
   font-size: 20px;
 
-  /* position: absolute; */
   letter-spacing: 0.5rem;
   font-family: "Dancing Script", cursive;
   text-align: center;
@@ -624,13 +539,6 @@ input[type="radio"]:checked + label span {
 }
 
 /* 모달 */
-/* 
-.imgList {
-	width: 100%;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-} */
 
 .modal {
   display: none;
@@ -676,10 +584,7 @@ input[type="radio"]:checked + label span {
 .div_side_select {
   width: 300px;
   height: 1000px;
-  /* background-color: yellow; */
   margin-left: 100px;
-  /* top:0px; */
-  /* margin-top: 0px; */
   overflow-y: scroll;
 }
 
@@ -690,10 +595,8 @@ input[type="radio"]:checked + label span {
 #user_img_side {
   width: 256px;
   height: 256px;
-  /* margin-left: 22px; */
   padding: 20px;
   filter: drop-shadow(10px 5px 5px #494848);
-  /* border-radius: 20px; */
 }
 
 #user_img_side:hover {
@@ -707,9 +610,6 @@ input[type="radio"]:checked + label span {
   border: none;
   background-color: transparent;
   margin-left: 130px;
-  /* display: flex;
-    justify-content: center;
-    align-items: center; */
 }
 
 .btn_up {
@@ -725,21 +625,9 @@ input[type="radio"]:checked + label span {
 /* calendar */
 /* ################################################################ */
 
-/* div {
-    background-color : white;
-    height: auto;
-    width: 400px;
-    margin: 0px;
-    padding: 20px;
-    margin: 0 auto;
-    border-radius:5px;
-    box-shadow:0px 40px 30px -20px rgba(0,0,0,0.3);
-} */
 .div_mainCal {
   /* size */
   width: 500px;
-  /* height: auto; */
-
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0px 30px 10px -10px rgba(214, 230, 245, 8);
@@ -808,7 +696,6 @@ td {
 /* footer */
 /* ########### */
 .footer_kakaoImg {
-  /* top: 0; */
   margin-top: 50px;
   display: flex;
   justify-content: center;
@@ -845,7 +732,6 @@ td {
 
   header {
     width: 100%;
-    /* height: 50px; */
     background-color: white;
     overflow: hidden;
   }
@@ -860,8 +746,6 @@ td {
     left: -100vw;
     z-index: 1;
     transition: all 0.35s;
-
-    /* filter: drop-shadow(10px 5px 5px #494848); */
   }
 
   input[id="menuicon"]:checked + label + div {
@@ -882,9 +766,6 @@ td {
   .main {
     height: 1000px;
     background-color: white;
-    /* display: block; */
-    /* position: relative; */
-    /* align-items: center; */
     position: relative;
     margin-top: 0px;
     text-align: center;
@@ -923,11 +804,8 @@ td {
 
     position: absolute;
     margin-left: 50px;
-    /* display: inline-block; */
 
     top: 600px;
-
-    /* margin-top: 2000px; */
   }
 
   .user_input_textarea {
@@ -957,8 +835,6 @@ td {
     background: rgba(254, 229, 0, 1);
     opacity: 1;
     border: none;
-    /* top: 0px; */
-    /* left: 0px; */
 
     /* radius */
     border-top-left-radius: 10px;
@@ -968,8 +844,6 @@ td {
 
     /* position */
     display: inline-block;
-
-    /* overflow: hidden; */
   }
 
   /* ################### */
@@ -998,12 +872,6 @@ td {
     float: left;
     position: relative;
     height: 50px;
-    /* position: relative; */
-    /* align-items: left; */
-    /* display: inline-block; */
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: left; */
     margin-bottom: 100px;
   }
 
@@ -1025,21 +893,12 @@ td {
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-
-    /* margin */
-    /* margin-top: 10px; */
-
-    /* position */
-    /* display: inline-block; */
-
-    /* overflow: hidden; */
   }
 
   .main_today {
     margin-left: 50px;
     font-size: 20px;
 
-    /* position: absolute; */
     letter-spacing: 0.5rem;
     font-family: "Dancing Script", cursive;
     text-align: center;
@@ -1050,19 +909,15 @@ td {
   }
   .btn_download {
     margin-left: 10px;
-    /* margin-left: 150px; */
   }
 
   .div_main_pic {
-    /* width: 300px; */
-    /* height: 300px; */
     align-items: center;
   }
 
   .user_main_pic {
     width: 100px;
     height: 100px;
-    /* margin-left: 0px; */
     box-shadow: 30px 30px 30px #494848;
     border-radius: 20px;
     float: left;
@@ -1071,10 +926,7 @@ td {
   .div_side_select {
     width: 100px;
     height: 100px;
-    /* background-color: yellow; */
     margin-left: 50px;
-    /* top:0px; */
-    /* margin-top: 0px; */
     overflow-x: scroll;
   }
 }

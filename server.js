@@ -1,46 +1,18 @@
 const express = require("express");
 var request = require("request");
-const fs = require("fs");
 const axios = require("axios");
+const fs = require("fs");
 const cookieParser = require("cookie-parser");
-require("dotenv").config();
-const app = express();
-const client_id = process.env.papagoID; // 파파고 아이디
-const client_secret = process.env.papagoSecret; // 파파고 키
-const api_url = "https://openapi.naver.com/v1/papago/n2mt";
 const bodyParser = require("body-parser");
 const { json } = require("body-parser");
+require("dotenv").config();
+
+const app = express();
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(cookieParser());
-
-async function getKarlo(text) {
-  try {
-    const response = await axios.post(
-      "https://api.kakaobrain.com/v1/inference/karlo/t2i",
-      {
-        prompt: {
-          text: `"${text}"`,
-          batch_size: 1,
-        },
-      },
-      {
-        headers: {
-          Authorization: `KakaoAK ${process.env.karloAPIKey}`,
-          "Content-Type": "application/json",
-        },
-      }
-    );
-
-    const resData = JSON.stringify(response.data);
-    const parseData = JSON.parse(resData);
-    const decode = Buffer.from(parseData.images[0].image, "base64");
-    let makeDecodeFile = fs.writeFileSync("./public/img/res.png", decode);
-  } catch (error) {
-    console.log(error);
-  }
-}
 
 app.all("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
@@ -55,7 +27,6 @@ app.all("/start", (req, res) => {
 
 app.get("/keyword", function (req, res) {
   let { user_input } = req.query;
-  // session user_input 저장코드 작성-다이어리
   res.cookie("input", user_input, { maxAge: 60000 });
 
   var headers = {
@@ -82,6 +53,10 @@ app.get("/keyword", function (req, res) {
     }
   });
 });
+
+const client_id = process.env.papagoID; // 파파고 아이디
+const client_secret = process.env.papagoSecret; // 파파고 키
+const api_url = "https://openapi.naver.com/v1/papago/n2mt";
 
 app.get("/translate", function (req, res) {
   let keyword = req.query;
@@ -119,8 +94,6 @@ app.get("/translate", function (req, res) {
     if (!error && response.statusCode == 200) {
       let trans = JSON.parse(body);
       let translated = trans.message.result.translatedText;
-      console.log(trans);
-      console.log(translated);
       res.redirect("loading?translatedText=" + translated);
     } else {
       res.status(response.statusCode).end();
@@ -129,21 +102,41 @@ app.get("/translate", function (req, res) {
   }); //리퀘스트
 });
 
+async function getKarlo(text) {
+  try {
+    const response = await axios.post(
+      "https://api.kakaobrain.com/v1/inference/karlo/t2i",
+      {
+        prompt: {
+          text: `"${text}"`,
+          batch_size: 1,
+        },
+      },
+      {
+        headers: {
+          Authorization: `KakaoAK ${process.env.karloAPIKey}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    const resData = JSON.stringify(response.data);
+    const parseData = JSON.parse(resData);
+    const decode = Buffer.from(parseData.images[0].image, "base64");
+    let makeDecodeFile = fs.writeFileSync("./public/img/res.png", decode);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 app.all("/loading", async function (req, res) {
   let { translatedText } = req.query;
   res.sendFile(__dirname + "/loadingjs.html");
-  console.log("loading으로 이동");
   await getKarlo(translatedText);
   console.log("그림완성");
 });
 
 app.all("/UserResult", function (req, res) {
-  console.log("결과 이동");
-  // if (req.session.input) {
-  //   console.log(req.session.input);
-  // }
-  console.log(req.cookies.input);
-  console.log(req.cookies.key);
   res.sendFile(__dirname + "/UserResult.html");
 });
 
