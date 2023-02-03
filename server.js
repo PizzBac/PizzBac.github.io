@@ -27,7 +27,7 @@ app.get("/keyword", function (req, res) {
   //index.html에서 submit으로 넘어온 일기 텍스트를 쿼리스트링을 이용해 받기
   let { user_input } = req.query;
   //가져온 텍스트를 쿠키로 유효시간을 설정 후 저장
-  res.cookie("input", user_input, { maxAge: 60000 });
+  res.cookie("input", user_input, { maxAge: 600000 });
 
   var headers = {
     "content-type": "application/json",
