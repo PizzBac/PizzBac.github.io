@@ -36,13 +36,13 @@ window.addEventListener("load", function () {
       var email = naverLogin.user.getEmail(); // 필수로 설정할것을 받아와 아래처럼 조건문을 줍니다.
 
       $("#profile_view").css({ display: "flex" });
-      $("#login_view").css({ display: "none" });
+      $("#login_view").css({ display: "none" }); // 로그인 후 ui 변경
 
-      document.getElementById("login_name").innerText = naverLogin.user.name;
+      document.getElementById("login_name").innerText = naverLogin.user.name; // 네이버에서 넘어온 유저의 이름을 표시
       document.getElementById("login_nick").innerText =
-        naverLogin.user.nickname;
-      document.getElementById("login_email").innerText = naverLogin.user.email;
-      document.getElementById("login_img").src = naverLogin.user.profile_image;
+        naverLogin.user.nickname; // 네이버에서 넘어온 유저의 닉네임을 표시
+      document.getElementById("login_email").innerText = naverLogin.user.email; // 네이버에서 넘어온 유저의 이메일을 표시
+      document.getElementById("login_img").src = naverLogin.user.profile_image; // 네이버에서 넘어온 유저의 프로필 사진을 표시
 
       if (email == undefined || email == null) {
         alert("이메일은 필수정보입니다. 정보제공을 동의해주세요.");
@@ -105,14 +105,14 @@ function kakaoLogin() {
     success: function (response) {
       Kakao.API.request({
         url: "/v2/user/me",
-        success: function (response) {                   
-          $("#login_nick").css({ display: "none" });          
+        success: function (response) {
+          $("#login_nick").css({ display: "none" }); // 닉네임을 표시해주는 html요소를 가려준다.
           document.getElementById("login_name").innerText =
-            response.properties.nickname;
+            response.properties.nickname; // 카카오에서 넘어온 유저의 닉네임을 표시
           document.getElementById("login_img").src =
-            response.properties.profile_image;
+            response.properties.profile_image; // 카카오에서 넘어온 유저의 프로필 사진을 표시
           document.getElementById("login_email").innerText =
-          response.kakao_account.email;
+            response.kakao_account.email; // 카카오에서 넘어온 유저의 이메일을 표시
         },
         fail: function (error) {
           console.log(error);

@@ -10,16 +10,17 @@ window.onload = function () {
     "일";
   document.getElementById("main_today").innerHTML = date;
 
-  var diary = decodeURIComponent(decodeURI(get_cookie("input")));
-  var keys = decodeURIComponent(decodeURI(get_cookie("key")));
+  var diary = decodeURIComponent(decodeURI(get_cookie("input"))); // 쿠키에 담긴 다이어리 내용(URI 디코딩을 해줌)
+  var keys = decodeURIComponent(decodeURI(get_cookie("key"))); // 쿠키에 담긴 다이어리의 키워드들(URI 디코딩을 해줌)
 
-  var sideTextEl = document.querySelector(".side_day_text");
-  sideTextEl.innerText = diary;
+  var sideTextEl = document.querySelector(".side_day_text"); // 다이어리의 내용이 담길 html 요소
+  sideTextEl.innerText = diary; // 쿠키에 담긴 다이어리 내용을 해당 html요소에 뿌려준다.
 
-  var keyosrdsEl = document.querySelector(".side_div_keywords ul");
+  var keyosrdsEl = document.querySelector(".side_div_keywords ul"); // 키워드들이 적힐 html 요소
 
-  var keyVal = keys.split(",");
+  var keyVal = keys.split(","); // 쿠키에 담긴 다이어리의 키워드들을 ','를 기준으로 쪼개준다.
   keyVal.forEach((val) => {
+    // 위에서 쪼갠 키워드들 만큼 아래 li태그를 반복 생성해준다.
     keyosrdsEl.innerHTML += /* HTML */ `
       <li id="keywords"><span>${val}</span></li>
     `;
