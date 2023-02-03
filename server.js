@@ -102,9 +102,9 @@ app.get("/translate", function (req, res) {
   request.post(options, function (error, response, body) {
     //리퀘스트
     if (!error && response.statusCode == 200) {
-      let trans = JSON.parse(body);//위에서 발송한 url을 파싱하여 자바스크립트 객체로 만들고 
-      let translated = trans.message.result.translatedText;//번역된 키워드들이 들어있는 translatedText만 추출하여
-      res.redirect("loading?translatedText=" + translated);// /loading으로 쿼리스트링형태로 발송 하면 133줄의 /loading에서 칼로가 받아 그림을 그리기 시작함
+      let trans = JSON.parse(body); //위에서 발송한 url을 파싱하여 자바스크립트 객체로 만들고
+      let translated = trans.message.result.translatedText; //번역된 키워드들이 들어있는 translatedText만 추출하여
+      res.redirect("loading?translatedText=" + translated); // /loading으로 쿼리스트링형태로 발송 하면 133줄의 /loading에서 칼로가 받아 그림을 그리기 시작함
     } else {
       res.status(response.statusCode).end();
       console.log("error = " + response.statusCode);
@@ -149,7 +149,6 @@ app.all("/loading", async function (req, res) {
   // 받은 번역된 키워드를 Karlo api 요청 메소드로 넘겨줘 해당 키워드로 그림을 그리게 해준다.
   // await 키워드를 붙여 해당 과정이 안전하게 끝날 때 까지 기다려준다.
   await getKarlo(translatedText);
-  console.log("그림완성"); // 그림이 완성이되면 콘솔창에 해당 문구가 출력
 });
 
 // 그림의 결과를 보여주는 페이지(위 loading 페이지에서 일정 시간이 지난 후 UserResult페이지로 넘어온다.)

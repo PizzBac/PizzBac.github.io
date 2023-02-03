@@ -92,10 +92,7 @@ function closePopUp() {
 }
 
 function logout() {
-  // openPopUp();
-  setTimeout(function () {
-    closePopUp();
-  }, 1000);
+
   alert("로그아웃 되었습니다.");
   // location.href = "http://localhost:3001/start"
   $("#profile_view").css({ display: "none" });
