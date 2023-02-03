@@ -79,20 +79,8 @@ function kakaoLogin() {
   });
 }
 
-var testPopUp;
-function openPopUp() {
-  testPopUp = window.open(
-    "https://nid.naver.com/nidlogin.logout",
-    "_blank",
-    "toolbar=yes,scrollbars=yes,resizable=yes,width=1,height=1"
-  );
-}
-function closePopUp() {
-  testPopUp.close();
-}
 
 function logout() {
-
   alert("로그아웃 되었습니다.");
   // location.href = "http://localhost:3001/start"
   $("#profile_view").css({ display: "none" });
