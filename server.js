@@ -22,31 +22,39 @@ app.all("/start", (req, res) => {
   res.sendFile(__dirname + "/diary.html");
 });
 
-// user_input
-//세션 미들웨어 생성
-
+//키워드 추출 api
 app.get("/keyword", function (req, res) {
+  //index.html에서 submit으로 넘어온 일기 텍스트를 쿼리스트링을 이용해 받기
   let { user_input } = req.query;
+  //가져온 텍스트를 쿠키로 유효시간을 설정 후 저장
   res.cookie("input", user_input, { maxAge: 60000 });
-
+  
   var headers = {
     "content-type": "application/json",
-    "x-auth-token": `${process.env.keywordAPIKey}`,
+    "x-auth-token": `${process.env.keywordAPIKey}`,//키워드 api 키 보안을 위해 .env에 따로 저장
   };
+  //키워드 api로 보낼 데이터 설정 - 앞서 받아온 일기장 텍스트
   var dataString = `{"document": "${user_input}"}`;
-
+  //api를 사용하기 위한 기본 설정
   var options = {
     url: "https://api.matgim.ai/54edkvw2hn/api-keyword",
     method: "POST",
     headers: headers,
     body: dataString,
   };
+  // 키워드 api를 통해 키워드 추출 후 다음 url로 보내는 과정
   request.post(options, function (error, response, body) {
+    //조건문을 통해서 오류가 발생한 경우와 발생하지 않은 경우 분리
     if (!error && response.statusCode == 200) {
+      //추출된 데이터를JSON.parse()메서드를 통해 JSON문자열 구문을 분석 후
+      //Js객체나 값을 생성
       const obj = JSON.parse(body);
+      //obj 객체를 다시 JSON 문자열로 반환
       const ok = JSON.stringify(obj);
+      //url에 파라미터로 JSON문자열=(ok) 담아서 translate로 보내기
       return res.redirect("/translate?translatedText=" + ok);
     } else {
+      //오류 발생 시 오류 코드 콘솔창에 출력
       return res
         .status(response.statusCode)
         .end(console.log("error = " + response.statusCode));
