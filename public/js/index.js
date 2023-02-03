@@ -2,15 +2,6 @@
 $(function () {
   // 로그인 헀을 시에
   $("#naverIdLogin_loginButton").click(function () {
-    // setTimeout(function(){}, 5000);
-    $("#profile_view").css({ display: "flex" });
-    $("#login_view").css({ display: "none" });
-  });
-  $("#googleIdLogin_loginButton").click(function () {
-    $("#profile_view").css({ display: "flex" });
-    $("#login_view").css({ display: "none" });
-  });
-  $("#appleIdLogin_loginButton").click(function () {
     $("#profile_view").css({ display: "flex" });
     $("#login_view").css({ display: "none" });
   });
@@ -60,43 +51,6 @@ window.addEventListener("load", function () {
     }
   });
 });
-// 구글 로그인
-function handleCredentialResponse(response) {
-  const responsePayload = parseJwt(response.credential);
-  console.log("ID: " + responsePayload.sub);
-  console.log("Full Name: " + responsePayload.name);
-  console.log("Given Name: " + responsePayload.given_name);
-  console.log("Family Name: " + responsePayload.family_name);
-  console.log("Image URL: " + responsePayload.picture);
-  console.log("Email: " + responsePayload.email);
-}
-function parseJwt(token) {
-  var base64Url = token.split(".")[1];
-  var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
-  var jsonPayload = decodeURIComponent(
-    atob(base64)
-      .split("")
-      .map(function (c) {
-        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
-      })
-      .join("")
-  );
-
-  return JSON.parse(jsonPayload);
-}
-window.onload = function () {
-  buildCalendar(); // 웹 페이지가 로드되면 buildCalendar 실행
-  google.accounts.id.initialize({
-    client_id:
-      "297020363981-aj22v44hf4i3npk54aqb2ti39d280tkt.apps.googleusercontent.com",
-    callback: handleCredentialResponse,
-  });
-  google.accounts.id.renderButton(
-    document.getElementById("google_login"),
-    { theme: "outline", size: "large" } // customization attributes
-  );
-  google.accounts.id.prompt(); // also display the One Tap dialog
-};
 
 // 카카오 로그인
 Kakao.init("65a522f7dd0d7c691b6042af368342e0"); //발급받은 키 중 javascript키를 사용해준다.
@@ -138,11 +92,12 @@ function closePopUp() {
 }
 
 function logout() {
-  openPopUp();
+  // openPopUp();
   setTimeout(function () {
     closePopUp();
   }, 1000);
   alert("로그아웃 되었습니다.");
+  // location.href = "http://localhost:3001/start"
   $("#profile_view").css({ display: "none" });
   $("#login_view").css({ display: "inline-block" });
 }
