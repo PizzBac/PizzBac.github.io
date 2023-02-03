@@ -102,9 +102,9 @@ app.get("/translate", function (req, res) {
   request.post(options, function (error, response, body) {
     //리퀘스트
     if (!error && response.statusCode == 200) {
-      let trans = JSON.parse(body); //위에서 발송한 url을 파싱하여 자바스크립트 객체로 만들고
-      let translated = trans.message.result.translatedText; //번역된 키워드들이 들어있는 translatedText만 추출하여
-      res.redirect("loading?translatedText=" + translated); // /loading으로 쿼리스트링형태로 발송 하면 133줄의 /loading에서 칼로가 받아 그림을 그리기 시작함
+      let trans = JSON.parse(body);//위에서 발송한 url을 파싱하여 자바스크립트 객체로 만들고 
+      let translated = trans.message.result.translatedText;//번역된 키워드들이 들어있는 translatedText만 추출하여
+      res.redirect("loading?translatedText=" + translated);// /loading으로 쿼리스트링형태로 발송 하면 133줄의 /loading에서 칼로가 받아 그림을 그리기 시작함
     } else {
       res.status(response.statusCode).end();
       console.log("error = " + response.statusCode);
