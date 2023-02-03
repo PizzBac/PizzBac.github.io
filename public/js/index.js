@@ -1,11 +1,11 @@
 // 로그인 / 로그아웃 버튼을 눌렀을 때 이벤트처리
 $(function () {
   // 로그인 헀을 시에
-  // $("#naverIdLogin_loginButton").click(function(){
-  //     // setTimeout(function(){}, 5000);
-  //     $("#profile_view").css({"display" : "flex"});
-  //     $("#login_view").css({"display" : "none"});
-  // });
+  $("#naverIdLogin_loginButton").click(function () {
+    // setTimeout(function(){}, 5000);
+    $("#profile_view").css({ display: "flex" });
+    $("#login_view").css({ display: "none" });
+  });
   $("#googleIdLogin_loginButton").click(function () {
     $("#profile_view").css({ display: "flex" });
     $("#login_view").css({ display: "none" });
@@ -18,19 +18,12 @@ $(function () {
     $("#profile_view").css({ display: "flex" });
     $("#login_view").css({ display: "none" });
   });
-
-  // 로그아웃 했을 시에
-  $(".btn_logout").click(function () {
-    $("#profile_view").css({ display: "none" });
-    $("#login_view").css({ display: "inline-block" });
-  });
 });
 
 // 네이버 로그인
 var naverLogin = new naver.LoginWithNaverId({
   clientId: "bXtVxf20aEiH_6zM5yjf", //내 애플리케이션 정보에 cliendId를 입력해줍니다.
   callbackUrl: "http://localhost:3001/start", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
-  // callbackUrl: "http://127.0.0.1:3000/index.html",
   isPopup: false,
   callbackHandle: true,
 });
@@ -42,7 +35,14 @@ window.addEventListener("load", function () {
     if (status) {
       var email = naverLogin.user.getEmail(); // 필수로 설정할것을 받아와 아래처럼 조건문을 줍니다.
 
-      console.log(naverLogin.user);
+      $("#profile_view").css({ display: "flex" });
+      $("#login_view").css({ display: "none" }); // 로그인 후 ui 변경
+
+      document.getElementById("login_name").innerText = naverLogin.user.name; // 네이버에서 넘어온 유저의 이름을 표시
+      document.getElementById("login_nick").innerText =
+        naverLogin.user.nickname; // 네이버에서 넘어온 유저의 닉네임을 표시
+      document.getElementById("login_email").innerText = naverLogin.user.email; // 네이버에서 넘어온 유저의 이메일을 표시
+      document.getElementById("login_img").src = naverLogin.user.profile_image; // 네이버에서 넘어온 유저의 프로필 사진을 표시
 
       if (email == undefined || email == null) {
         alert("이메일은 필수정보입니다. 정보제공을 동의해주세요.");
@@ -97,17 +97,22 @@ window.onload = function () {
   );
   google.accounts.id.prompt(); // also display the One Tap dialog
 };
+
 // 카카오 로그인
-Kakao.init("502c3fe3e6df6ef481d4c56f61c900b9"); //발급받은 키 중 javascript키를 사용해준다.
-console.log(Kakao.isInitialized()); // sdk초기화여부판단
-//카카오로그인
+Kakao.init("65a522f7dd0d7c691b6042af368342e0"); //발급받은 키 중 javascript키를 사용해준다.
 function kakaoLogin() {
   Kakao.Auth.login({
     success: function (response) {
       Kakao.API.request({
         url: "/v2/user/me",
         success: function (response) {
-          console.log(response);
+          $("#login_nick").css({ display: "none" }); // 닉네임을 표시해주는 html요소를 가려준다.
+          document.getElementById("login_name").innerText =
+            response.properties.nickname; // 카카오에서 넘어온 유저의 닉네임을 표시
+          document.getElementById("login_img").src =
+            response.properties.profile_image; // 카카오에서 넘어온 유저의 프로필 사진을 표시
+          document.getElementById("login_email").innerText =
+            response.kakao_account.email; // 카카오에서 넘어온 유저의 이메일을 표시
         },
         fail: function (error) {
           console.log(error);
@@ -119,93 +124,28 @@ function kakaoLogin() {
     },
   });
 }
-//카카오로그아웃
-function kakaoLogout() {
-  if (Kakao.Auth.getAccessToken()) {
-    Kakao.API.request({
-      url: "/v1/user/unlink",
-      success: function (response) {
-        console.log(response);
-      },
-      fail: function (error) {
-        console.log(error);
-      },
-    });
-    Kakao.Auth.setAccessToken(undefined);
-  }
+
+var testPopUp;
+function openPopUp() {
+  testPopUp = window.open(
+    "https://nid.naver.com/nidlogin.logout",
+    "_blank",
+    "toolbar=yes,scrollbars=yes,resizable=yes,width=1,height=1"
+  );
 }
+function closePopUp() {
+  testPopUp.close();
+}
+
 function logout() {
+  openPopUp();
+  setTimeout(function () {
+    closePopUp();
+  }, 1000);
   alert("로그아웃 되었습니다.");
+  $("#profile_view").css({ display: "none" });
+  $("#login_view").css({ display: "inline-block" });
 }
-function clickApple() {
-  alert("개발중입니다.");
-}
-
-var testPopUp;
-function openPopUp() {
-  testPopUp = window.open(
-    "https://nid.naver.com/nidlogin.logout",
-    "_blank",
-    "toolbar=yes,scrollbars=yes,resizable=yes,width=1,height=1"
-  );
-}
-function closePopUp() {
-  testPopUp.close();
-}
-
-function naverLogout() {
-  openPopUp();
-  setTimeout(function () {
-    closePopUp();
-  }, 1000);
-}
-
-function hideLogin() {
-  const btn1 = document.getElementById("login_view");
-  if (btn1.style.display !== "none") {
-    btn1.style.display = "none";
-  } else {
-    btn1.style.display = "block";
-  }
-}
-
-// function logout() {
-//   alert("로그아웃 되었습니다.");
-//   history.go(-1);
-// }
-function clickApple() {
-  alert("개발중입니다.");
-}
-
-var testPopUp;
-function openPopUp() {
-  testPopUp = window.open(
-    "https://nid.naver.com/nidlogin.logout",
-    "_blank",
-    "toolbar=yes,scrollbars=yes,resizable=yes,width=1,height=1"
-  );
-}
-function closePopUp() {
-  testPopUp.close();
-}
-
-function naverLogout() {
-  openPopUp();
-  setTimeout(function () {
-    closePopUp();
-  }, 1000);
-}
-function hideLogin() {
-  const btn1 = document.getElementById("login_view");
-  if (btn1.style.display !== "none") {
-    btn1.style.display = "none";
-  } else {
-    btn1.style.display = "block";
-  }
-}
-// window.onload = function () {
-//     buildCalendar();  // 웹 페이지가 로드되면 buildCalendar 실행
-// }
 
 let nowMonth = new Date(); // 현재 달을 페이지를 로드한 날의 달로 초기화
 let today = new Date(); // 페이지를 로드한 날짜를 저장

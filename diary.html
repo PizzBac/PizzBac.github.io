@@ -46,7 +46,6 @@
                         <li>
                             <h2 class="title02">Chelangelo</h2>
                         </li>
-                        <!-- <li><p class="title_desp">record your own perfect day</p></li> -->
                     </ul>
                 </nav>
             </label>
@@ -62,18 +61,7 @@
                             <li>
                                 <!-- 아래와같이 아이디를 꼭 써준다. -->
                                 <a id="naverIdLogin_loginButton" href="javascript:void(0)">
-                                    <button class="btn_login_naver" onclick="hideLogin()"></button>
-                                </a>
-                            </li>
-                            <li>
-                                <a id="google_login" href="javascript:void(0)">
-                                    <button class="btn_login_google" data-onsuccess="onSignIn"
-                                        onclick="hideLogin()"></button>
-                                </a>
-                            </li>
-                            <li>
-                                <a id="GgCustomLogin" href="javascript:void(0)">
-                                    <button class="btn_login_apple" onclick="clickApple()"></button>
+                                    <button class="btn_login_naver"></button>
                                 </a>
                             </li>
                             <li onclick="kakaoLogin();">
@@ -82,17 +70,15 @@
                                 </a>
                             </li>
                         </ul>
-                        <!-- <img src="" alt=""> -->
-                        <!-- <div class="google_login">소셜 로그인 div</div> -->
                     </div>
                     <div class="div_side_profile" id="profile_view">
                         <div class="div_profile_img">
-                            <img class="img_profile" src="/img/crong1.png">
+                            <img class="img_profile"  id="login_img">
                         </div>
                         <div class="div_profile">
-                            <p class="name">박준형</p>
-                            <span class="nickname">크롱크롱 님</span>
-                            <span class="email">kk_crong@naver.com</span>
+                            <p class="name" id="login_name"></p>
+                            <span class="nickname" id="login_nick"></span>
+                            <span class="email" id="login_email"></span>
                             <div class="div_profile_logout">
                                 <button class="btn_logout" onclick="logout()">로그아웃</button>
                             </div>
@@ -106,12 +92,12 @@
                             <span></span> 영어(Eng) </label> </div>
                 </div>
                 <div class="div_side_pic">
-                    <img src="/img/res.png" alt="dog" id="user_img">
-                    <img src="/img/res.png" alt="dog" id="user_img">
-                    <img src="/img/res.png" alt="dog" id="user_img">
-                    <img src="/img/res.png" alt="dog" id="user_img">
-                    <img src="/img/res.png" alt="dog" id="user_img">
-                    <img src="/img/res.png" alt="dog" id="user_img">
+                    <img src="/img/res.png" alt="작성이후 생성됩니다" id="user_img">
+                    <img src="/img/res.png" alt="작성이후 생성됩니다" id="user_img">
+                    <img src="/img/res.png" alt="작성이후 생성됩니다" id="user_img">
+                    <img src="/img/res.png" alt="작성이후 생성됩니다" id="user_img">
+                    <img src="/img/res.png" alt="작성이후 생성됩니다" id="user_img">
+                    <img src="/img/res.png" alt="작성이후 생성됩니다" id="user_img">
                 </div>
             </div>
             <img class="kakaoImg_3"
