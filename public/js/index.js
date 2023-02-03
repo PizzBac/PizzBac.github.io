@@ -138,10 +138,10 @@ function closePopUp() {
 }
 
 function logout() {
-  openPopUp();
-  setTimeout(function () {
-    closePopUp();
-  }, 1000);
+  // openPopUp();
+  // setTimeout(function () {
+  //   closePopUp();
+  // }, 1000);
   alert("로그아웃 되었습니다.");
   $("#profile_view").css({ display: "none" });
   $("#login_view").css({ display: "inline-block" });
