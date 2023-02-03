@@ -99,19 +99,20 @@ window.onload = function () {
 };
 
 // 카카오 로그인
-Kakao.init("502c3fe3e6df6ef481d4c56f61c900b9"); //발급받은 키 중 javascript키를 사용해준다.
+Kakao.init("65a522f7dd0d7c691b6042af368342e0"); //발급받은 키 중 javascript키를 사용해준다.
 function kakaoLogin() {
   Kakao.Auth.login({
     success: function (response) {
       Kakao.API.request({
         url: "/v2/user/me",
-        success: function (response) {
-          $("#login_nick").css({ display: "none" });
-          $("#login_email").css({ display: "none" });
+        success: function (response) {                   
+          $("#login_nick").css({ display: "none" });          
           document.getElementById("login_name").innerText =
             response.properties.nickname;
           document.getElementById("login_img").src =
             response.properties.profile_image;
+          document.getElementById("login_email").innerText =
+          response.kakao_account.email;
         },
         fail: function (error) {
           console.log(error);
