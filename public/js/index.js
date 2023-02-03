@@ -2,7 +2,6 @@
 $(function () {
   // 로그인 헀을 시에
   $("#naverIdLogin_loginButton").click(function () {
-    // setTimeout(function(){}, 5000);
     $("#profile_view").css({ display: "flex" });
     $("#login_view").css({ display: "none" });
   });
@@ -44,7 +43,6 @@ window.addEventListener("load", function () {
       }
 
       $("#naverIdLogin_loginButton").click(function () {
-        // setTimeout(function(){}, 5000);
         $("#profile_view").css({ display: "flex" });
         $("#login_view").css({ display: "none" });
       });
@@ -231,9 +229,6 @@ $(function () {
     // 해당 이미지 텍스트 가져오기
     var imgTit = $(this).children("p").text();
     $(".modalBox p").text(imgTit);
-
-    // 해당 이미지에 alt값을 가져와 제목으로
-    //$(".modalBox p").text(imgAlt);
   });
 
   //.modal안에 button을 클릭하면 .modal닫기
@@ -258,5 +253,4 @@ var thumbnail = document.querySelectorAll("#gallery > li > img");
 for (var i = 0; i < thumbnail.length; i++)
   thumbnail[i].addEventListener("click", function () {
     photo.setAttribute("src", this.getAttribute("src"));
-    // photo.src = this.src;
   });
