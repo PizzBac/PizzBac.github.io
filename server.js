@@ -87,7 +87,7 @@ app.get("/translate", function (req, res) {
       input.substr(index + character.length)
     );
   }; //for문으로 돌려서 읽어온 값들을 ","기준으로 출력했기에 마지막에도 ","가 붙어있는데 이를 제거하기위하여 함수설정
-  var change_str = str.slice(0, -1); //슬라이스하여 change_str에 삽입
+  var change_str = str.slice(0, -2); //슬라이스하여 change_str에 삽입
   res.cookie("key", change_str, { maxAge: 600000 }); //쿠키에 이름을 "key"로 설정하고 value에 change_str을 담아서 리스폰스함(마지막화면에서 키워드 한글출력을 위해서)
   const options = {
     //번역하기 위한 클라이언트 아이디, 비밀번호 그리고 번역하고자 하는 문장의 form을 담아서 제이슨형식으로 발송
