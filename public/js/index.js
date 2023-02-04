@@ -1,6 +1,6 @@
 // 로그인 / 로그아웃 버튼을 눌렀을 때 이벤트처리
 $(function () {
-  // 로그인 헀을 시에
+  // 로그인 했을 시에
   $("#naverIdLogin_loginButton").click(function () {
     $("#profile_view").css({ display: "flex" });
     $("#login_view").css({ display: "none" });
@@ -31,8 +31,7 @@ window.addEventListener("load", function () {
       $("#login_view").css({ display: "none" }); // 로그인 후 ui 변경
 
       document.getElementById("login_name").innerText = naverLogin.user.name; // 네이버에서 넘어온 유저의 이름을 표시
-      document.getElementById("login_nick").innerText =
-        naverLogin.user.nickname; // 네이버에서 넘어온 유저의 닉네임을 표시
+      document.getElementById("login_nick").innerText = naverLogin.user.nickname; // 네이버에서 넘어온 유저의 닉네임을 표시
       document.getElementById("login_email").innerText = naverLogin.user.email; // 네이버에서 넘어온 유저의 이메일을 표시
       document.getElementById("login_img").src = naverLogin.user.profile_image; // 네이버에서 넘어온 유저의 프로필 사진을 표시
 
@@ -75,12 +74,9 @@ function kakaoLogin() {
         url: "/v2/user/me",
         success: function (response) {
           $("#login_nick").css({ display: "none" }); // 닉네임을 표시해주는 html요소를 가려준다.
-          document.getElementById("login_name").innerText =
-            response.properties.nickname; // 카카오에서 넘어온 유저의 닉네임을 표시
-          document.getElementById("login_img").src =
-            response.properties.profile_image; // 카카오에서 넘어온 유저의 프로필 사진을 표시
-          document.getElementById("login_email").innerText =
-            response.kakao_account.email; // 카카오에서 넘어온 유저의 이메일을 표시
+          document.getElementById("login_name").innerText = response.properties.nickname; // 카카오에서 넘어온 유저의 닉네임을 표시
+          document.getElementById("login_img").src = response.properties.profile_image; // 카카오에서 넘어온 유저의 프로필 사진을 표시
+          document.getElementById("login_email").innerText = response.kakao_account.email; // 카카오에서 넘어온 유저의 이메일을 표시
         },
         fail: function (error) {
           console.log(error);
