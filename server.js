@@ -4,7 +4,6 @@ const axios = require("axios");
 const fs = require("fs");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-const { json } = require("body-parser");
 require("dotenv").config();
 
 const app = express();
@@ -77,7 +76,7 @@ app.get("/translate", function (req, res) {
   var data3 = JSON.parse(data2.translatedText);
   for (var i = 0; i < data3.sentences.length; ++i) {
     for (var j = 0; j < data3.sentences[i].keywords.length; ++j) {
-      str += data3.sentences[i].keywords[j].word + ",";
+      str += data3.sentences[i].keywords[j].word + ", ";
     }
   }
   //str에 kewyord를 data3에서 translatedText(쿼리스트링받은거)를 넣어 값에 접근하여 for문으로 배열을 읽어옴
